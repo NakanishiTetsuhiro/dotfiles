@@ -35,3 +35,35 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+
+"---------------------------
+" Start Neobundle Settings.
+"---------------------------
+" bundleで管理するディレクトリを指定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" NERDTreeを設定
+NeoBundle 'scrooloose/nerdtree'
+" autocloseを設定(自動的に閉じ括弧を入れてくれるやつ)
+NeoBundle 'Townk/vim-autoclose'
+" Emmetを設定
+NeoBundle 'mattn/emmet-vim'
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
+" 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
+NeoBundleCheck
+
+"-------------------------
+" End Neobundle Settings.
+"-------------------------
