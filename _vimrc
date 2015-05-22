@@ -2,6 +2,14 @@
 :set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 :set fileformats=unix,dos,mac
 :set number
+:set hls
+set expandtab "タブ入力を複数の空白入力に置き換える
+set tabstop=2 "画面上でタブ文字が占める幅
+set shiftwidth=2 "自動インデントでずれる幅
+set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set autoindent "改行時に前の行のインデントを継続する
+set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する"
+
 
 "Vundleの設定
 " set rtp+=~/.vim/bundle/vundle/
@@ -93,13 +101,13 @@ NeoBundleCheck
 "-------------------------
 " Key Remap
 "-------------------------
-nnoremap ;  :
-nnoremap :  ;
-vnoremap ;  :
-vnoremap :  ;
+" nnoremap ;  :
+" nnoremap :  ;
+" vnoremap ;  :
+" vnoremap :  ;
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
-
+"
 
 "-------------------------
 " Colorscheme
