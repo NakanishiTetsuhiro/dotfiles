@@ -3,13 +3,13 @@
 :set fileformats=unix,dos,mac
 :set number
 :set hls
-set expandtab "タブ入力を複数の空白入力に置き換える
-set tabstop=2 "画面上でタブ文字が占める幅
-set shiftwidth=2 "自動インデントでずれる幅
-set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-set autoindent "改行時に前の行のインデントを継続する
-set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する"
-
+:set expandtab "タブ入力を複数の空白入力に置き換える
+:set tabstop=2 "画面上でタブ文字が占める幅
+:set shiftwidth=2 "自動インデントでずれる幅
+:set softtabstop=2 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+:set autoindent "改行時に前の行のインデントを継続する
+:set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+:set guifont=Ricty:h16 "フォントサイズの設定"
 
 "Vundleの設定
 " set rtp+=~/.vim/bundle/vundle/
@@ -65,6 +65,7 @@ NeoBundle 'tpope/vim-endwise.git'
 " Emmetを設定
 NeoBundle 'mattn/emmet-vim'
 let g:user_emmet_leader_key='<C-t>'
+
 " surroundを設定（シングルクオートとダブルクオートを切り替えたりできる。cs'"
 " というコマンドでシングルクオートをダブルクオートに置換することができます。
 " 他にもcs'<p>と打ち込むと、シングルクオート文字列を<p>タグで囲むこともできたりして、応用的な使い方がいろいろできます。
@@ -83,6 +84,10 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'tomasr/molokai'
+
+" 補完
+NeoBundle 'othree/html5.vim'
+NeoBundle 'hail2u/vim-css3-syntax'
 
 call neobundle#end()
 
@@ -105,9 +110,9 @@ NeoBundleCheck
 " nnoremap :  ;
 " vnoremap ;  :
 " vnoremap :  ;
-noremap <C-j> <esc>
-noremap! <C-j> <esc>
-"
+" noremap <C-j> <esc>
+" noremap! <C-j> <esc>
+
 
 "-------------------------
 " Colorscheme
@@ -127,3 +132,6 @@ syntax on
 
 colorscheme molokai
 set t_Co=256
+
+" Vimをhomebrewでインスコしたときに設定
+set clipboard+=unnamed
