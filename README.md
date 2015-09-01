@@ -2,7 +2,7 @@
 まるまる利用したところでうまく動かない可能性が高いです。参考にする程度でよろしくお願いします。
 
 ##Install
-`curl -L raw.github.com/NakanishiTetsuhiro/dotfiles/master/install.sh | bash`
+ホームディレクトリにgit cloneしたあと、各自で./installshしてください。
 
 ##履歴
 2015/07/11 最近やっと環境構築をサクサクできるようになってきました！やったー
