@@ -1,4 +1,4 @@
-#...
+#!/bin/bash
 
 DOTPATH=~/dotfiles
 
@@ -26,7 +26,7 @@ else
     die "curl or wget required"
 fi
 
-cd ~/.dotfiles
+cd ~/dotfiles
 if [ $? -ne 0 ]; then
     die "not found: $DOTPATH"
 fi
