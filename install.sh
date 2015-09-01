@@ -1,8 +1,6 @@
 #!/bin/sh
 
-for f in .??*
+for f in _??*
 do
-    [ "$f" = ".git" ] && continue
-
     ln -snfv "$f" "$HOME"/"$f"
 done
