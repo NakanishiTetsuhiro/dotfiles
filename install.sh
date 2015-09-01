@@ -1,6 +1,5 @@
 #!/bin/sh
-
 for f in _??*
 do
-    ln -snv "$f" "$HOME"/dotfiles/"${f/_/.}"
+    ln -snv "$HOME"/dotfiles/"$f" "$HOME"/"${f/_/.}"
 done
