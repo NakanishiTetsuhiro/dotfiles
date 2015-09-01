@@ -10,36 +10,7 @@
 :set autoindent "改行時に前の行のインデントを継続する
 :set smartindent "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 :set guifont=Ricty:h16 "フォントサイズの設定"
-
-"Vundleの設定
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
-" " let Vundle manage Vundle
-" " required!
-" Bundle 'gmarik/vundle'
-" " My Bundles here:
-" "
-" " original repos on github
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'tpope/vim-rails.git'
-" " vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" " non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-" " ...
-" filetype plugin indent on     " required!
-" "
-" " Brief help
-" " :BundleList          - list configured bundles
-" " :BundleInstall(!)    - install(update) bundles
-" " :BundleSearch(!) foo - search(or refresh cache first) for foo
-" " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-" "
-" " see :h vundle for more details or wiki for FAQ
-" " NOTE: comments after Bundle command are not allowed..
+:set backspace=indent,eol,start "バックスペースが効かないことに対する対処"
 
 
 "---------------------------
@@ -61,72 +32,68 @@ NeoBundle 'Townk/vim-autoclose'
 " endwiseを設定(自動的にendを入れてくれるやつ)
 NeoBundle 'tpope/vim-endwise.git'
 " Emmetを設定
-NeoBundle 'mattn/emmet-vim'
-let g:user_emmet_leader_key='<C-t>'
+" NeoBundle 'mattn/emmet-vim'
+" let g:user_emmet_leader_key='<C-t>'
 
 " surroundを設定（シングルクオートとダブルクオートを切り替えたりできる。cs'"
 " というコマンドでシングルクオートをダブルクオートに置換することができます。
 " 他にもcs'<p>と打ち込むと、シングルクオート文字列を<p>タグで囲むこともできたりして、応用的な使い方がいろいろできます。
-NeoBundle 'tpope/vim-surround'
+" NeoBundle 'tpope/vim-surround'
 " tcomment.vim（gccか、<C-->でコメントアウトしたり外したり）
 NeoBundle 'tomtom/tcomment_vim'
 " Unite
 NeoBundle 'Shougo/unite.vim'
 " open-browser（URLを開いたり、ググったりできる）
-NeoBundle 'open-browser.vim'
+" NeoBundle 'open-browser.vim'
 " ブラウザの自動リロード
-NeoBundle 'tell-k/vim-browsereload-mac'
+" NeoBundle 'tell-k/vim-browsereload-mac'
 " css3のsyntax
-NeoBundle 'hail2u/vim-css3-syntax'
+" NeoBundle 'hail2u/vim-css3-syntax'
 " colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'tomasr/molokai'
 
-" 外すと他の補完してくれるプラグインと競合してうまく動かないご様子
-" NeoBundle 'othree/html5.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-
-  "-------------------------
-  " neocomplcache
-  "-------------------------
-  "" neocomplcache
-  NeoBundle 'Shougo/neocomplcache'
-  " Disable AutoComplPop.
-  let g:acp_enableAtStartup = 0
-  " Use neocomplcache.
-  let g:neocomplcache_enable_at_startup = 1
-  " Use smartcase.
-  let g:neocomplcache_enable_smart_case = 1
-  " Set minimum syntax keyword length.
-  let g:neocomplcache_min_syntax_length = 3
-  let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-  " Define dictionary.
-  let g:neocomplcache_dictionary_filetype_lists = {
-      \ 'default' : ''
-      \ }
-
-  " Plugin key-mappings.
-  inoremap <expr><C-g>     neocomplcache#undo_completion()
-  inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-  " Recommended key-mappings.
-  " <CR>: close popup and save indent.
-  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  function! s:my_cr_function()
-    return neocomplcache#smart_close_popup() . "\<CR>"
-  endfunction
-  " <TAB>: completion.
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-y>  neocomplcache#close_popup()
-  inoremap <expr><C-e>  neocomplcache#cancel_popup()
-  "-------------------------
-  " End neocomplcache
-  "-------------------------
+  " "-------------------------
+  " " neocomplcache
+  " "-------------------------
+  " "" neocomplcache
+  " NeoBundle 'Shougo/neocomplcache'
+  " " Disable AutoComplPop.
+  " let g:acp_enableAtStartup = 0
+  " " Use neocomplcache.
+  " let g:neocomplcache_enable_at_startup = 1
+  " " Use smartcase.
+  " let g:neocomplcache_enable_smart_case = 1
+  " " Set minimum syntax keyword length.
+  " let g:neocomplcache_min_syntax_length = 3
+  " let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+  "
+  " " Define dictionary.
+  " let g:neocomplcache_dictionary_filetype_lists = {
+  "     \ 'default' : ''
+  "     \ }
+  "
+  " " Plugin key-mappings.
+  " inoremap <expr><C-g>     neocomplcache#undo_completion()
+  " inoremap <expr><C-l>     neocomplcache#complete_common_string()
+  "
+  " " Recommended key-mappings.
+  " " <CR>: close popup and save indent.
+  " inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  " function! s:my_cr_function()
+  "   return neocomplcache#smart_close_popup() . "\<CR>"
+  " endfunction
+  " " <TAB>: completion.
+  " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  " " <C-h>, <BS>: close popup and delete backword char.
+  " inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+  " inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+  " inoremap <expr><C-y>  neocomplcache#close_popup()
+  " inoremap <expr><C-e>  neocomplcache#cancel_popup()
+  " "-------------------------
+  " " End neocomplcache
+  " "-------------------------
 call neobundle#end()
 
 
@@ -139,16 +106,6 @@ NeoBundleCheck
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
-
-"-------------------------
-" My Key Remap
-"-------------------------
-" nnoremap ;  :
-" nnoremap :  ;
-" vnoremap ;  :
-" vnoremap :  ;
-" noremap <C-j> <esc>
-" noremap! <C-j> <esc>
 
 
 "-------------------------
@@ -170,5 +127,9 @@ syntax on
 colorscheme molokai
 set t_Co=256
 
+
+"-------------------------
+" setting of only mac
+"-------------------------
 " Vimをhomebrewでインスコしたときに設定
 set clipboard+=unnamed
