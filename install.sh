@@ -2,6 +2,5 @@
 
 for f in _??*
 do
-    f=${f/_/.}
-    ln -snfv "$f" "$HOME"/"$f"
+    ln -snv "${f/_/.}" "$HOME"/"$f"
 done
