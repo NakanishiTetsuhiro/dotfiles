@@ -118,7 +118,7 @@ NeoBundleCheck
 "-------------------------
 " Key Bindings
 "-------------------------
-nnoremap ; :
+" nnoremap ; :
 noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 inoremap <C-j> <Esc>
 
