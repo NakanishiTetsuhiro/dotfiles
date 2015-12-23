@@ -25,85 +25,61 @@ if has('vim_starting')
     :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
   endif
 endif
-
 " bundleで管理するディレクトリを指定
 set runtimepath+=~/.vim/bundle/neobundle.vim/
-
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " neobundle自体をneobundleで管理
 NeoBundleFetch 'Shougo/neobundle.vim'
+
 " NERDTreeを設定
 NeoBundle 'scrooloose/nerdtree'
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
-" autocloseを設定(自動的に閉じ括弧を入れてくれるやつ)
+
 NeoBundle 'Townk/vim-autoclose'
-" endwiseを設定(自動的にendを入れてくれるやつ)
+
 NeoBundle 'tpope/vim-endwise.git'
+
 " Emmetを設定
 " NeoBundle 'mattn/emmet-vim'
 " let g:user_emmet_leader_key='<C-t>'
 
-" surroundを設定（シングルクオートとダブルクオートを切り替えたりできる。cs'"
-" というコマンドでシングルクオートをダブルクオートに置換することができます。
-" 他にもcs'<p>と打ち込むと、シングルクオート文字列を<p>タグで囲むこともできたりして、応用的な使い方がいろいろできます。
 " NeoBundle 'tpope/vim-surround'
+
 " tcomment.vim（gccか、<C-->でコメントアウトしたり外したり）
 NeoBundle 'tomtom/tcomment_vim'
+
 " Unite
 NeoBundle 'Shougo/unite.vim'
+
 " open-browser（URLを開いたり、ググったりできる）
 " NeoBundle 'open-browser.vim'
 " ブラウザの自動リロード
 " NeoBundle 'tell-k/vim-browsereload-mac'
 " css3のsyntax
 " NeoBundle 'hail2u/vim-css3-syntax'
+
+NeoBundle 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
+let g:indent_guides_color_change_percent = 30
+let g:indent_guides_guide_size = 1
+
 " colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'tomasr/molokai'
 
-  " "-------------------------
-  " " neocomplcache
-  " "-------------------------
-  " "" neocomplcache
-  " NeoBundle 'Shougo/neocomplcache'
-  " " Disable AutoComplPop.
-  " let g:acp_enableAtStartup = 0
-  " " Use neocomplcache.
-  " let g:neocomplcache_enable_at_startup = 1
-  " " Use smartcase.
-  " let g:neocomplcache_enable_smart_case = 1
-  " " Set minimum syntax keyword length.
-  " let g:neocomplcache_min_syntax_length = 3
-  " let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-  "
-  " " Define dictionary.
-  " let g:neocomplcache_dictionary_filetype_lists = {
-  "     \ 'default' : ''
-  "     \ }
-  "
-  " " Plugin key-mappings.
-  " inoremap <expr><C-g>     neocomplcache#undo_completion()
-  " inoremap <expr><C-l>     neocomplcache#complete_common_string()
-  "
-  " " Recommended key-mappings.
-  " " <CR>: close popup and save indent.
-  " inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  " function! s:my_cr_function()
-  "   return neocomplcache#smart_close_popup() . "\<CR>"
-  " endfunction
-  " " <TAB>: completion.
-  " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  " " <C-h>, <BS>: close popup and delete backword char.
-  " inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-  " inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-  " inoremap <expr><C-y>  neocomplcache#close_popup()
-  " inoremap <expr><C-e>  neocomplcache#cancel_popup()
-  " "-------------------------
-  " " End neocomplcache
-  " "-------------------------
+" NeoBundle 'Shougo/neocomplete.vim'
+" let g:neocomplete#enable_at_startup = 1
+" NeoBundle 'violetyk/neocomplete-php.vim'
+" let g:neocomplete_php_locale = 'ja'
+
+
 call neobundle#end()
 
 
@@ -143,7 +119,8 @@ set t_Co=256
 
 
 "-------------------------
-" setting of only mac
+" For OSX only
 "-------------------------
 " Vimをhomebrewでインスコしたときに設定
 set clipboard+=unnamed
+
