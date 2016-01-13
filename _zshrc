@@ -113,21 +113,14 @@ setopt auto_cd
 
 
 #---------------------
-# For UNIX only
-#---------------------
-
-
-#---------------------
 # For OSX only
 #---------------------
-alias rm="rmtrash"
+# alias rm="rmtrash"
 
 # macvimを入れる時に追加
 # export PATH=/usr/local/bin:$PATH
 
 # export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-
-# alias htdocs=/Applications/XAMPP/xamppfiles/htdocs
 
 # export PYENV_ROOT="$HOME/.pyenv"
 # export PATH="$PYENV_ROOT/bin:$PATH"
