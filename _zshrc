@@ -87,11 +87,8 @@ export LANG=ja_JP.UTF-8
 #----------------------------------------------------------------
 
 
-
 alias ll='ls -l'
 alias la='ls -a'
-alias v=vim
-alias g=git
 
 # zshの補完機能強化
 fpath=(~/zsh-completions/src $fpath)
@@ -116,9 +113,6 @@ setopt auto_cd
 # For OSX only
 #---------------------
 # alias rm="rmtrash"
-
-# macvimを入れる時に追加
-# export PATH=/usr/local/bin:$PATH
 
 # export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 
