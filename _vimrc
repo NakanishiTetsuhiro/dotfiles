@@ -1,5 +1,5 @@
 :set encoding=utf-8
-:set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+:set fileencodings=utf-8
 :set fileformats=unix,dos,mac
 :set number
 :set hls
@@ -95,7 +95,8 @@ NeoBundleCheck
 " Key Bindings
 "-------------------------
 " nnoremap ; :
-noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
+" noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
+nnoremap <ESC><ESC> :nohlsearch<CR>
 inoremap <C-j> <Esc>
 
 "-------------------------
