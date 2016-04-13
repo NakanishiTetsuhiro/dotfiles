@@ -29,11 +29,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'scrooloose/nerdtree'
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tpope/vim-endwise.git'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 " Colorschemes
 NeoBundle 'altercation/vim-colors-solarized'
@@ -63,6 +64,10 @@ NeoBundleCheck
 " noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 inoremap <C-j> <Esc>
+let mapleader = "\<Space>"
+noremap <Leader>w :w<CR>
+noremap <Leader>q :q<CR>
+noremap <Leader>t :tabnew<CR>
 
 "-------------------------
 " Colorscheme
