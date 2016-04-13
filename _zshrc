@@ -9,10 +9,11 @@ source $ZSH/oh-my-zsh.sh
 
 # alias
 alias l='ls -l'
-alias la='ls -a'
+alias la='ls -la'
 alias v=vim
 alias g=git
 alias vg=vagrant
+alias open=gnome-open
 
 # zshの補完機能強化
 fpath=(~/zsh-completions/src $fpath)
@@ -25,15 +26,25 @@ SAVEHIST=6000000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
-# rmtrash config
-alias rm="rmtrash"
-
 # pyenv config
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# pylearn2 config
-export PYLEARN2_DATA_PATH=/Users/tetsuhiro/workspace/machine_learning/datasets
-# export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
-export PYLEARN2_VIEWER_COMMAND="open"
+# Switchback to Vim when use Ctrl+z
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+# # pylearn2 config
+# export PYLEARN2_DATA_PATH=/Users/tetsuhiro/workspace/machine_learning/datasets
+# # export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
+# export PYLEARN2_VIEWER_COMMAND="open"
