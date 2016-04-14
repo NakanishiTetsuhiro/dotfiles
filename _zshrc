@@ -48,8 +48,8 @@ bindkey '^Z' fancy-ctrl-z
 
 
 case ${OSTYPE} in 
+  #Settings for OSX
   darwin*)
-    #ここにMac向けの設定
     alias sed='gsed'
 
     # rmtrash config
@@ -64,8 +64,10 @@ case ${OSTYPE} in
     fi
     export PATH="$HOME/.pyenv/anaconda-2.4.0/bin:$PATH"
     ;;
+
+  #Settings for Linux
   linux*)
-    #ここにLinux向けの設定
+    alias open=gnome-open
     ;;
   esac
 
