@@ -4,8 +4,8 @@
 :set number
 :set hls
 :set expandtab
-:set shiftwidth=2
-:set guifont=Ricty:h16
+:set shiftwidth=4
+:set guifont=Ricty:h14
 :set backspace=indent,eol,start
 " :set tabstop=2
 " :set softtabstop=2
@@ -34,6 +34,9 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tpope/vim-endwise.git'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'surround.vim'
+
 
 " Colorschemes
 NeoBundle 'altercation/vim-colors-solarized'
@@ -59,10 +62,15 @@ NeoBundleCheck
 "-------------------------
 " Key Bindings
 "-------------------------
-" nnoremap ; :
-" noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 nnoremap <ESC><ESC> :nohlsearch<CR>
+noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 inoremap <C-j> <Esc>
+nnoremap /  /\v
+
+let mapleader = "\<Space>"
+noremap <Leader>w :w<CR>
+noremap <Leader>q :q<CR>
+noremap <Leader>t :tabnew<CR>
 
 "-------------------------
 " Colorscheme
