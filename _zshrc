@@ -16,7 +16,6 @@ alias v=vim
 alias g=git
 alias ch=checkout
 alias co=commit
-alias sed='gsed'
 
 # zshの補完機能強化
 fpath=(~/zsh-completions/src $fpath)
@@ -47,16 +46,31 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-# # pylearn2 config
-# export PYLEARN2_DATA_PATH=/Users/tetsuhiro/workspace/machine_learning/datasets
-# # export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
-# export PYLEARN2_VIEWER_COMMAND="open"
 
 case ${OSTYPE} in 
   darwin*)
     #ここにMac向けの設定
+    alias sed='gsed'
+
+    # rmtrash config
+    alias rm="rmtrash"
+
+    # Set path for pyenv
+    export PYENV_ROOT="${HOME}/.pyenv"
+    if [ -d "${PYENV_ROOT}" ]; then
+      export PATH=${PYENV_ROOT}/bin:$PATH
+      eval "$(pyenv init -)"
+      # eval "$(pyenv virtualenv-init -)"
+    fi
+    export PATH="$HOME/.pyenv/anaconda-2.4.0/bin:$PATH"
     ;;
   linux*)
     #ここにLinux向けの設定
     ;;
   esac
+
+
+# # pylearn2 config
+# export PYLEARN2_DATA_PATH=/Users/tetsuhiro/workspace/machine_learning/datasets
+# # export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
+# export PYLEARN2_VIEWER_COMMAND="open"
