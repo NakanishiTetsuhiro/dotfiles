@@ -48,3 +48,12 @@ bindkey '^Z' fancy-ctrl-z
 # export PYLEARN2_DATA_PATH=/Users/tetsuhiro/workspace/machine_learning/datasets
 # # export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
 # export PYLEARN2_VIEWER_COMMAND="open"
+
+case ${OSTYPE} in 
+  darwin*)
+    #ここにMac向けの設定
+    ;;
+  linux*)
+    #ここにLinux向けの設定
+    ;;
+  esac
