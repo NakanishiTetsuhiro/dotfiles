@@ -28,12 +28,15 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" Filer
 NeoBundle 'scrooloose/nerdtree'
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
-NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'kien/ctrlp.vim'
+
+" Ruby
 NeoBundle 'tpope/vim-endwise.git'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'Shougo/unite.vim'
+
+" Git
 NeoBundle 'tpope/vim-fugitive'
 
 " Colorschemes
@@ -41,14 +44,13 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'tomasr/molokai'
 
-" NeoBundle 'nathanaelkane/vim-indent-guides'
-" let g:indent_guides_enable_on_vim_startup=1
-" let g:indent_guides_start_level=2
-" let g:indent_guides_auto_colors=0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
-" let g:indent_guides_color_change_percent = 30
-" let g:indent_guides_guide_size = 1
+" Syntax checking
+NeoBundle 'scrooloose/syntastic.git'
+
+" etc
+NeoBundle 'tomtom/tcomment_vim'
+" I do not know well how to use...
+NeoBundle 'easymotion/vim-easymotion'
 
 call neobundle#end()
 
