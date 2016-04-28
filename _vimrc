@@ -7,6 +7,7 @@
 :set shiftwidth=4
 :set guifont=Ricty:h14
 :set backspace=indent,eol,start
+:set foldlevel=100 "Don't autofold anything
 " :set tabstop=2
 " :set softtabstop=2
 " :set autoindent
@@ -46,6 +47,13 @@ NeoBundle 'tomasr/molokai'
 
 " Syntax checking
 NeoBundle 'scrooloose/syntastic.git'
+
+" Markdown Preview
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+au BufRead,BufNewFile *.md set filetype=markdown
+" let g:previm_open_cmd = 'open -a Firefox'
 
 " etc
 NeoBundle 'tomtom/tcomment_vim'
