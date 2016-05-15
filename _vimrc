@@ -29,10 +29,14 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+
 " Filer
 NeoBundle 'scrooloose/nerdtree'
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
 NeoBundle 'kien/ctrlp.vim'
+
+" Unite.vim
+NeoBundle 'Shougo/unite.vim'
 
 " Ruby
 NeoBundle 'tpope/vim-endwise.git'
@@ -78,6 +82,7 @@ let mapleader = "\<Space>"
 noremap <Leader>w :w<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>t :tabnew<CR>
+noremap <CR> o<ESC>
 
 "-------------------------
 " Colorscheme
@@ -90,8 +95,50 @@ syntax on
 colorscheme molokai
 set t_Co=256
 
-"---------------------------
-" OSX Settings
-"---------------------------
-set clipboard+=unnamed
+"-------------------------
+" Automatically move the current directory
+"-------------------------
+augroup BufferAu
+  autocmd!
+  autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
+augroup END
 
+"-------------------------
+" Automatically changed to single-byte input when switch normal mode.
+"-------------------------
+function! ImInActivate()
+      call system('fcitx-remote -c')
+endfunction
+inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
+
+"---------------------------
+" OSX settings
+"---------------------------
+" set clipboard+=unnamed
+
+"---------------------------
+" unite.vim settings
+"---------------------------
+" 入力モードで開始する
+" let g:unite_enable_start_insert=1
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
