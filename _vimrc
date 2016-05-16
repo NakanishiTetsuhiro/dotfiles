@@ -39,7 +39,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Shougo/unite.vim'
 
 " Ruby
-NeoBundle 'tpope/vim-endwise.git'
+" NeoBundle 'tpope/vim-endwise.git'
 
 " Git
 NeoBundle 'tpope/vim-fugitive'
@@ -49,10 +49,11 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'tomasr/molokai'
 
-" Syntax checking
+" Syntax check
 NeoBundle 'scrooloose/syntastic.git'
 
 " Markdown Preview
+" If want to preview Markdown file please type :PrevimOpen
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
@@ -61,6 +62,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " etc
 NeoBundle 'tomtom/tcomment_vim'
+
 " I do not know well how to use...
 NeoBundle 'easymotion/vim-easymotion'
 

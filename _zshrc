@@ -10,8 +10,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # alias
-alias l='ls -l'
-alias la='ls -la'
+alias l='ls -ltr'
 alias v=vim
 alias g=git
 alias ch=checkout
@@ -33,6 +32,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# rbenv config
+eval "$(rbenv init -)"
+
 # Switchback to Vim when use Ctrl+z
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -48,8 +50,8 @@ bindkey '^Z' fancy-ctrl-z
 
 
 case ${OSTYPE} in 
-  #Settings for OSX
   darwin*)
+    # Settings for OSX
     alias sed='gsed'
 
     # rmtrash config
@@ -63,11 +65,14 @@ case ${OSTYPE} in
       # eval "$(pyenv virtualenv-init -)"
     fi
     export PATH="$HOME/.pyenv/anaconda-2.4.0/bin:$PATH"
-    ;;
 
-  #Settings for Linux
+    # Dictionary config
+    dict() { open dict://$1; }
+  ;;
+
   linux*)
+    # Settings for Linux
     alias open=gnome-open
-    ;;
+  ;;
   esac
 
