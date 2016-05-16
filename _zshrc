@@ -1,4 +1,4 @@
-export LANG=ja_JP.UTF-8
+# export LANG=ja_JP.UTF-8
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 
@@ -71,8 +71,3 @@ case ${OSTYPE} in
     ;;
   esac
 
-
-# # pylearn2 config
-# export PYLEARN2_DATA_PATH=/Users/tetsuhiro/workspace/machine_learning/datasets
-# # export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
-# export PYLEARN2_VIEWER_COMMAND="open"
