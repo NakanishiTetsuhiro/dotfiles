@@ -2,7 +2,9 @@
 
 ## Installation
 
-    curl -L raw.github.com/NakanishiTetsuhiro/dotfiles/master/install.sh | bash -s -d
+    git clone https://github.com/NakanishiTetsuhiro/dotfiles
+    cd ~/dotfiles
+    ./install.sh
 
 ## Thanks to...
 
