@@ -8,7 +8,8 @@
 
 or
 
-    curl -L raw.github.com/NakanishiTetsuhiro/dotfiles/master/install.sh | bash -s -d
+    Warning: It does not work now
+    curl -L raw.github.com/NakanishiTetsuhiro/dotfiles/master/install.sh | bash -s -i
 
 ## Thanks to...
 
