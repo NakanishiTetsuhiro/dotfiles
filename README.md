@@ -6,6 +6,10 @@
     cd ~/dotfiles
     ./install.sh -d
 
+or
+
+    curl -L raw.github.com/NakanishiTetsuhiro/dotfiles/master/install.sh | bash -s -d
+
 ## Thanks to...
 
 * [優れたdotfilesを設計する](http://tellme.tokyo/post/2015/07/16/dotfiles/ "優れたdotfilesを設計する")
