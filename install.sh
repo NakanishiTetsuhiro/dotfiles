@@ -12,11 +12,9 @@ deploy() {
     fi
 
     # . と .. のリンクはいらないので .??* になる
-    for f in .??*
+    for f in _??*
     do
-        [ "$f" = ".git" ] && continue
-    
-        ln -snv "$DOTPATH/$f" "$HOME/$f"
+        ln -snv "$DOTPATH/$f" "$HOME/${f/_/.}"
     done
 }
 
