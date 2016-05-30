@@ -1,17 +1,18 @@
-#個人で使う用のdotfilesです
-まるまる利用したところでうまく動かない可能性が高いです。参考にする程度でよろしくお願いします。
+# Nakanishi's dotfiles
 
-##Install
-1. ホームディレクトリにgit cloneしたあと、各自で./installshしてください
-2. oh-my-zshを利用しています。oh-my-zshの公式HPを参考にルート直下に.oh-my-zshの作成をお願いします
+## Installation
 
-##履歴
-2015/07/11 最近やっと環境構築をサクサクできるようになってきました！やったー
-2015/09/01 install.shを導入
-2016/01/31 .zshrcを整理整頓しました
+    curl -L raw.github.com/NakanishiTetsuhiro/dotfiles/master/install.sh | bash -s -d
 
-##Dotfilesのデプロイの参考にさせていただきました
-http://tellme.tokyo/post/2015/07/16/dotfiles/
+## Thanks to...
 
-##自分のブログはこちら
+* [優れたdotfilesを設計する](http://tellme.tokyo/post/2015/07/16/dotfiles/ "優れたdotfilesを設計する")
+* [ライセンスの選択を恐れる必要はありません](http://qiita.com/tadsan/items/99d816e78ca429093b75 "ライセンスの選択を恐れる必要はありません")
+
+## My blogs!
+
 http://kaoru6strings.hatenablog.com/
+
+## Lincense
+
+Nakanishi's dotfiles is released under the MIT license.
