@@ -4,7 +4,7 @@
 
     git clone https://github.com/NakanishiTetsuhiro/dotfiles
     cd ~/dotfiles
-    ./install.sh
+    ./install.sh -d
 
 ## Thanks to...
 
