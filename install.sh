@@ -1,6 +1,15 @@
 #!/bin/bash
 
+
 DOTPATH=~/dotfiles
+
+
+if [ "$#" -ne 1 -o ! -r "$1" ]; then
+
+    echo "usage: ./install.sh -d"
+    exit 1
+fi
+
 
 deploy() {
 
@@ -17,6 +26,7 @@ deploy() {
         ln -snv "$DOTPATH/$f" "$HOME/${f/_/.}"
     done
 }
+
 
 initialize() {
     

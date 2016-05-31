@@ -38,6 +38,9 @@ NeoBundle 'kien/ctrlp.vim'
 " Unite.vim
 NeoBundle 'Shougo/unite.vim'
 
+" Python
+" NeoBundle 'davidhalter/jedi-vim'
+
 " Ruby
 " NeoBundle 'tpope/vim-endwise.git'
 
@@ -62,9 +65,9 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " etc
 NeoBundle 'tomtom/tcomment_vim'
-
-" I do not know well how to use...
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'easymotion/vim-easymotion'
+" map <Leader>e <Plug>(easymotion-prefix)
 
 call neobundle#end()
 
@@ -116,7 +119,7 @@ inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
 "---------------------------
 " OSX settings
 "---------------------------
-" set clipboard+=unnamed
+set clipboard+=unnamed
 
 "---------------------------
 " unite.vim settings
@@ -144,3 +147,15 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+"---------------------------
+" jedi-vim Setting
+"---------------------------
+" autocmd FileType python setlocal omnifunc=jedi#completions
+" let g:jedi#completions_enabled = 0
+" let g:jedi#auto_vim_configuration = 0
+" if !exists('g:neocomplete#force_omni_input_patterns')
+"   let g:neocomplete#force_omni_input_patterns = {}
+" endif
+"
+" g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
