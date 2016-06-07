@@ -10,7 +10,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # alias
-alias l='ls -ltr'
+alias l='ls -l'
 alias v=vim
 alias g=git
 alias ch=checkout
