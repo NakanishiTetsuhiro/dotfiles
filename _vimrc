@@ -1,17 +1,17 @@
-:set encoding=utf-8
-:set fileencodings=utf-8
-:set fileformats=unix,dos,mac
-:set number
-:set hls
-:set expandtab
-:set shiftwidth=4
-:set guifont=Ricty:h14
-:set backspace=indent,eol,start
-:set foldlevel=100 "Don't autofold anything
-" :set tabstop=2
-" :set softtabstop=2
-" :set autoindent
-" :set smartindent
+set encoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
+set number
+set hls
+set expandtab
+set shiftwidth=4
+set guifont=Ricty:h14
+set backspace=indent,eol,start
+set foldlevel=100 "Don't autofold anything
+" set tabstop=2
+" set softtabstop=2
+" set autoindent
+" set smartindent
 
 "---------------------------
 " neobundle settings.
@@ -67,7 +67,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'easymotion/vim-easymotion'
-" map <Leader>e <Plug>(easymotion-prefix)
 
 call neobundle#end()
 
@@ -88,6 +87,8 @@ noremap <Leader>w :w<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>t :tabnew<CR>
 noremap <CR> o<ESC>
+" Insert Single Character when typing ,s
+nmap <silent> ,s "=nr2char(getchar())<cr>P
 
 "-------------------------
 " Colorscheme
