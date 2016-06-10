@@ -1,17 +1,21 @@
 set encoding=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
+
 set number
 set hls
+
+" If type <tab> when use Control-v <Tab>
 set expandtab
-set shiftwidth=4
+" set autoindent
+" set shiftwidth=2
+" set tabstop=2
+" set softtabstop=2
+
 set guifont=Ricty:h14
 set backspace=indent,eol,start
 set foldlevel=100 "Don't autofold anything
-" set tabstop=2
-" set softtabstop=2
-" set autoindent
-" set smartindent
+
 
 "---------------------------
 " neobundle settings.
@@ -64,9 +68,11 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " let g:previm_open_cmd = 'open -a Firefox'
 
 " etc
+" Type gcc when toggle comment out
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'easymotion/vim-easymotion'
+  let g:EasyMotion_startofline=0
 
 call neobundle#end()
 
@@ -75,6 +81,7 @@ filetype plugin indent on
 
 NeoBundleCheck
 
+
 "-------------------------
 " Key Bindings
 "-------------------------
@@ -82,6 +89,7 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 inoremap <C-j> <Esc>
 nnoremap /  /\v
+
 let mapleader = "\<Space>"
 noremap <Leader>w :w<CR>
 noremap <Leader>q :q<CR>
@@ -120,7 +128,7 @@ inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
 "---------------------------
 " OSX settings
 "---------------------------
-set clipboard+=unnamed
+" set clipboard+=unnamed
 
 "---------------------------
 " unite.vim settings
