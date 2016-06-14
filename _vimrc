@@ -73,6 +73,7 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'easymotion/vim-easymotion'
   let g:EasyMotion_startofline=0
+NeoBundle 'christoomey/vim-tmux-navigator'
 
 call neobundle#end()
 
