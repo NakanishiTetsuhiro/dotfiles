@@ -66,6 +66,8 @@ case ${OSTYPE} in
   darwin*)
     # Settings for OSX
     alias sed='gsed'
+    # http://please-sleep.cou929.nu/python-locale-valueerror-utf-8.html
+    export LC_ALL='ja_JP.UTF-8' 
 
     # rmtrash config
     alias rm="rmtrash"
@@ -82,6 +84,7 @@ case ${OSTYPE} in
     # Dictionary config
     dict() { open dict://$1; }
   ;;
+
 
   linux*)
     # Settings for Linux
