@@ -1,10 +1,8 @@
 set encoding=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
-
 set number
 set hls
-
 " If type <tab> when use Control-v <Tab>
 set expandtab
 " set autoindent
@@ -67,6 +65,9 @@ NeoBundle 'tyru/open-browser.vim'
 au BufRead,BufNewFile *.md set filetype=markdown
 " let g:previm_open_cmd = 'open -a Firefox'
 
+" ctags assist
+NeoBundle 'szw/vim-tags'
+
 " etc
 " Type gcc when toggle comment out
 NeoBundle 'tomtom/tcomment_vim'
@@ -74,6 +75,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'easymotion/vim-easymotion'
   let g:EasyMotion_startofline=0
 NeoBundle 'christoomey/vim-tmux-navigator'
+  nmap <silent> <nop> :TmuxNavigateDown<cr>
 
 call neobundle#end()
 
@@ -89,7 +91,8 @@ NeoBundleCheck
 nnoremap <ESC><ESC> :nohlsearch<CR>
 noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 inoremap <C-j> <Esc>
-nnoremap /  /\v
+vnoremap <C-j> <Esc>
+" nnoremap /  /\v
 
 let mapleader = "\<Space>"
 noremap <Leader>w :w<CR>
