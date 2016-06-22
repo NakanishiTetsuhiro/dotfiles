@@ -66,6 +66,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " let g:previm_open_cmd = 'open -a Firefox'
 
 " ctags assist
+" Type :TagsGenerate when update ctags
 NeoBundle 'szw/vim-tags'
 
 " etc
