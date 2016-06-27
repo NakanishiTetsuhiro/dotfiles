@@ -131,11 +131,6 @@ endfunction
 inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
 
 "---------------------------
-" OSX settings
-"---------------------------
-" set clipboard+=unnamed
-
-"---------------------------
 " unite.vim settings
 "---------------------------
 " 入力モードで開始する
@@ -161,6 +156,7 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
 
 "---------------------------
 " jedi-vim Setting
@@ -194,3 +190,10 @@ if &term =~ "xterm"
     cnoremap <special> <Esc>[201~ <nop>
 endif
 
+
+"---------------------------
+" Settings for each OS
+"---------------------------
+if has('mac')
+    set clipboard+=unnamed
+endif
