@@ -92,6 +92,7 @@ NeoBundleCheck
 "-------------------------
 " Key Bindings
 "-------------------------
+noremap <Esc><Esc> :<C-u>nohlsearch<cr><Esc>
 noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
@@ -104,6 +105,8 @@ noremap <Leader>t :tabnew<CR>
 noremap <CR> o<ESC>
 " Insert Single Character when typing ,s
 nmap <silent> ,s "=nr2char(getchar())<cr>P
+
+noremap <Leader>vrc :tabe ~/.vimrc<CR>
 
 
 "-------------------------
@@ -182,7 +185,8 @@ if &term =~ "xterm"
     let &t_te .= "\e[?2004l"
     let &pastetoggle = "\e[201~"
 
-    function XTermPasteBegin(ret)
+    " function! を使うとfunctionを上書きできるようになる
+    function! XTermPasteBegin(ret)
         set paste
         return a:ret
     endfunction
@@ -200,3 +204,13 @@ endif
 if has('mac')
     set clipboard+=unnamed
 endif
+
+
+"---------------------------
+" auto reload .vimrc
+"---------------------------
+augroup source-vimrc
+    autocmd!
+    autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+    autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
+augroup END
