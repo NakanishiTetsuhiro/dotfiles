@@ -6,13 +6,16 @@ set hls
 " If type <tab> when use Control-v <Tab>
 set expandtab
 " set autoindent
-" set shiftwidth=2
-" set tabstop=2
-" set softtabstop=2
-
+" タブを表示するときの幅
+set tabstop=4
+" タブを挿入するときの幅
+set shiftwidth=4
+set softtabstop=4
 set guifont=Ricty:h14
 set backspace=indent,eol,start
 set foldlevel=100 "Don't autofold anything
+" Automatically move the cursor to the last editing position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 
 "---------------------------
@@ -89,7 +92,6 @@ NeoBundleCheck
 "-------------------------
 " Key Bindings
 "-------------------------
-nnoremap <ESC><ESC> :nohlsearch<CR>
 noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
@@ -102,6 +104,7 @@ noremap <Leader>t :tabnew<CR>
 noremap <CR> o<ESC>
 " Insert Single Character when typing ,s
 nmap <silent> ,s "=nr2char(getchar())<cr>P
+
 
 "-------------------------
 " Colorscheme
