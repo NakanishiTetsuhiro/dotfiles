@@ -201,6 +201,32 @@ if &term =~ "xterm"
 endif
 
 
+""""""""""""""""""""""""""""""
+" 自動的に閉じ括弧を入力
+""""""""""""""""""""""""""""""
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+
+
+""""""""""""""""""""""""""""""
+" 全角スペースの表示(動いてるかわからん)
+" http://inari.hatenablog.com/entry/2014/05/05/231307
+""""""""""""""""""""""""""""""
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
+
+
 "---------------------------
 " Settings for each OS
 "---------------------------
