@@ -5,88 +5,16 @@ set number
 set hls
 " If type <tab> when use Control-v <Tab>
 set expandtab
-" set autoindent
-" タブを表示するときの幅
+set autoindent
 set tabstop=4
-" タブを挿入するときの幅
 set shiftwidth=4
 set softtabstop=4
 set guifont=Ricty:h14
 set backspace=indent,eol,start
 set foldlevel=100 "Don't autofold anything
+
 " Automatically move the cursor to the last editing position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-
-"---------------------------
-" neobundle settings.
-"---------------------------
-if has('vim_starting')
-  set nocompatible
-  if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
-    echo "install neobundle..."
-    :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
-  endif
-endif
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-
-" Filer
-NeoBundle 'scrooloose/nerdtree'
-  nnoremap <silent><C-e> :NERDTreeToggle<CR>
-NeoBundle 'kien/ctrlp.vim'
-
-" Unite.vim
-NeoBundle 'Shougo/unite.vim'
-
-" Python
-" NeoBundle 'davidhalter/jedi-vim'
-
-" Ruby
-" NeoBundle 'tpope/vim-endwise.git'
-
-" Git
-NeoBundle 'tpope/vim-fugitive'
-
-" Colorschemes
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'tomasr/molokai'
-
-" Syntax check
-NeoBundle 'scrooloose/syntastic.git'
-
-" Markdown Preview
-" If want to preview Markdown file please type :PrevimOpen
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-au BufRead,BufNewFile *.md set filetype=markdown
-" let g:previm_open_cmd = 'open -a Firefox'
-
-" ctags assist
-" Type :TagsGenerate when update ctags
-NeoBundle 'szw/vim-tags'
-
-" etc
-" Type gcc when toggle comment out
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'easymotion/vim-easymotion'
-  let g:EasyMotion_startofline=0
-NeoBundle 'christoomey/vim-tmux-navigator'
-  nmap <silent> <nop> :TmuxNavigateDown<cr>
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-NeoBundleCheck
 
 
 "-------------------------
@@ -109,16 +37,89 @@ nmap <silent> ,s "=nr2char(getchar())<cr>P
 noremap <Leader>vrc :tabe ~/.vimrc<CR>
 
 
+"---------------------------
+" dein.vim settings
+"---------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath^=/home/nakanishi/.vim/dein.vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('/home/nakanishi/.vim/dein.vim'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+" Filer
+call dein#add('scrooloose/nerdtree')
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
+call dein#add('kien/ctrlp.vim')
+
+" Unite.vim
+call dein#add('Shougo/unite.vim')
+
+" Python
+" call dein#add('davidhalter/jedi-vim')
+
+" Ruby
+" call dein#add('tpope/vim-endwise.git')
+
+" Git
+call dein#add('tpope/vim-fugitive')
+
+" Colorschemes
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('tomasr/molokai')
+
+" Syntax check
+call dein#add('scrooloose/syntastic.git')
+
+" Markdown Preview
+" If want to preview Markdown file please type :PrevimOpen
+call dein#add('plasticboy/vim-markdown')
+call dein#add('kannokanno/previm')
+call dein#add('tyru/open-browser.vim')
+au BufRead,BufNewFile *.md set filetype=markdown
+" let g:previm_open_cmd = 'open -a Firefox'
+
+" ctags assist. Type :TagsGenerate when update ctags
+call dein#add('szw/vim-tags')
+
+" etc
+" Type gcc when toggle comment out
+call dein#add('tomtom/tcomment_vim')
+call dein#add('tpope/vim-surround')
+call dein#add('easymotion/vim-easymotion')
+  let g:EasyMotion_startofline=0
+call dein#add('christoomey/vim-tmux-navigator')
+  nmap <silent> <nop> :TmuxNavigateDown<cr>
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+call dein#end()
+
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+
 "-------------------------
 " Colorscheme
 "-------------------------
 syntax on
-
-" let g:hybrid_use_iTerm_colors = 1
-" colorscheme hybrid
-
 colorscheme molokai
 set t_Co=256
+
 
 "-------------------------
 " Automatically move the current directory
@@ -128,6 +129,7 @@ augroup BufferAu
   autocmd BufNewFile,BufRead,BufEnter * if isdirectory(expand("%:p:h")) && bufname("%") !~ "NERD_tree" | cd %:p:h | endif
 augroup END
 
+
 "-------------------------
 " Automatically changed to single-byte input when switch normal mode.
 "-------------------------
@@ -135,6 +137,7 @@ function! ImInActivate()
       call system('fcitx-remote -c')
 endfunction
 inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
+
 
 "---------------------------
 " unite.vim settings
