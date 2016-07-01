@@ -12,6 +12,7 @@ set softtabstop=4
 set guifont=Ricty:h14
 set backspace=indent,eol,start
 set foldlevel=100 "Don't autofold anything
+set wildmode=list,full
 
 " Automatically move the cursor to the last editing position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
