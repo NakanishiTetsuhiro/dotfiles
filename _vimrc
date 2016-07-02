@@ -45,14 +45,11 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath^=/home/nakanishi/.vim/dein.vim/repos/github.com/Shougo/dein.vim
+set runtimepath^=$HOME/.vim/dein.vim/repos/github.com/Shougo/dein.vim
 
-" Required:
-call dein#begin(expand('/home/nakanishi/.vim/dein.vim'))
+call dein#begin(expand('$HOME/.vim/dein.vim'))
 
 " Let dein manage dein
-" Required:
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
