@@ -37,6 +37,9 @@ nmap <silent> ,s "=nr2char(getchar())<cr>P
 
 noremap <Leader>vrc :tabe ~/.vimrc<CR>
 
+" Invalid ex mode
+nnoremap Q <Nop>
+
 
 "---------------------------
 " dein.vim settings
@@ -56,13 +59,16 @@ call dein#add('Shougo/dein.vim')
 " Filer
 call dein#add('scrooloose/nerdtree')
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
-call dein#add('kien/ctrlp.vim')
+" call dein#add('kien/ctrlp.vim')
 
 " Unite.vim
 call dein#add('Shougo/unite.vim')
 
+" Neocomplete
+call dein#add('shougo/neocomplete.vim')
+
 " Python
-" call dein#add('davidhalter/jedi-vim')
+call dein#add('davidhalter/jedi-vim')
 
 " Ruby
 " call dein#add('tpope/vim-endwise.git')
@@ -168,14 +174,17 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 "---------------------------
 " jedi-vim Setting
 "---------------------------
-" autocmd FileType python setlocal omnifunc=jedi#completions
-" let g:jedi#completions_enabled = 0
-" let g:jedi#auto_vim_configuration = 0
+autocmd FileType python setlocal omnifunc=jedi#completions
+
+let g:jedi#auto_vim_configuration = 0
+
 " if !exists('g:neocomplete#force_omni_input_patterns')
-"   let g:neocomplete#force_omni_input_patterns = {}
+"         let g:neocomplete#force_omni_input_patterns = {}
 " endif
-"
-" g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
+" let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
+" let g:jedi#completions_command = "<C-q>"
 
 
 "---------------------------
