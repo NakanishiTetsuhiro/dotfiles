@@ -55,34 +55,90 @@ call dein#begin(expand('$HOME/.vim/dein.vim'))
 " Let dein manage dein
 call dein#add('Shougo/dein.vim')
 
-" Add or remove your plugins here:
-" Filer
-call dein#add('scrooloose/nerdtree')
-  nnoremap <silent><C-e> :NERDTreeToggle<CR>
-" call dein#add('kien/ctrlp.vim')
 
-" Unite.vim
+"---------------------------
+" unite.vim
+"---------------------------
 call dein#add('Shougo/unite.vim')
+" 入力モードで開始する
+" let g:unite_enable_start_insert=1
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+
+" Filer
+" call dein#add('scrooloose/nerdtree')
+"   nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" call dein#add('kien/ctrlp.vim')
+call dein#add('Shougo/vimfiler')
+
 
 " Neocomplete
 call dein#add('shougo/neocomplete.vim')
 
-" Python
-call dein#add('davidhalter/jedi-vim')
 
-" Ruby
-" call dein#add('tpope/vim-endwise.git')
+"---------------------------
+" jedi-vim
+"---------------------------
+" call dein#add('davidhalter/jedi-vim')
+" autocmd FileType python setlocal omnifunc=jedi#completions
+" let g:jedi#completions_enabled = 0
+" let g:jedi#auto_vim_configuration = 0
+" if !exists('g:neocomplete#force_omni_input_patterns')
+"   let g:neocomplete#force_omni_input_patterns = {}
+" endif
+"
+" g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
 
 " Git
 call dein#add('tpope/vim-fugitive')
+
 
 " Colorschemes
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('tomasr/molokai')
 
+
+"---------------------------
+" neocomplcache
+"---------------------------
+call dein#add('Shougo/neocomplcache')
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+
 " Syntax check
 call dein#add('scrooloose/syntastic.git')
+
 
 " Markdown Preview
 " If want to preview Markdown file please type :PrevimOpen
@@ -92,8 +148,10 @@ call dein#add('tyru/open-browser.vim')
 au BufRead,BufNewFile *.md set filetype=markdown
 " let g:previm_open_cmd = 'open -a Firefox'
 
+
 " ctags assist. Type :TagsGenerate when update ctags
 call dein#add('szw/vim-tags')
+
 
 " etc
 " Type gcc when toggle comment out
@@ -103,6 +161,7 @@ call dein#add('easymotion/vim-easymotion')
   let g:EasyMotion_startofline=0
 call dein#add('christoomey/vim-tmux-navigator')
   nmap <silent> <nop> :TmuxNavigateDown<cr>
+
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -144,50 +203,6 @@ inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
 
 
 "---------------------------
-" unite.vim settings
-"---------------------------
-" 入力モードで開始する
-" let g:unite_enable_start_insert=1
-" バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-" ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-" 最近使用したファイル一覧
-nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
-" 常用セット
-nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
-" 全部乗せ
-nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-" ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-" ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
-
-
-"---------------------------
-" jedi-vim Setting
-"---------------------------
-autocmd FileType python setlocal omnifunc=jedi#completions
-
-let g:jedi#auto_vim_configuration = 0
-
-" if !exists('g:neocomplete#force_omni_input_patterns')
-"         let g:neocomplete#force_omni_input_patterns = {}
-" endif
-
-" let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-
-" let g:jedi#completions_command = "<C-q>"
-
-
-"---------------------------
 " paste
 "---------------------------
 if &term =~ "xterm"
@@ -206,14 +221,6 @@ if &term =~ "xterm"
     cnoremap <special> <Esc>[200~ <nop>
     cnoremap <special> <Esc>[201~ <nop>
 endif
-
-
-""""""""""""""""""""""""""""""
-" 自動的に閉じ括弧を入力
-""""""""""""""""""""""""""""""
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
 
 
 """"""""""""""""""""""""""""""
