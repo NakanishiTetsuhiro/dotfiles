@@ -26,9 +26,6 @@ mybc () {
 # zshの補完機能強化
 fpath=(~/zsh-completions/src $fpath)
 autoload -U compinit; compinit
-
-
-# zsh history
 HISTFILE=~/.zsh_history
 HISTSIZE=6000000
 SAVEHIST=6000000
@@ -64,8 +61,6 @@ bindkey '^Z' fancy-ctrl-z
 case ${OSTYPE} in 
   darwin*)
     # Settings for OSX
-    # rmtrash config
-    alias rm="rmtrash"
     alias ls='ls -G'
     alias sed='gsed'
 
