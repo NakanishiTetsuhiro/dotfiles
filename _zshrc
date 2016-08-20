@@ -55,7 +55,7 @@ fancy-ctrl-z () {
   fi
 }
 zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+bindkey -e '^Z' fancy-ctrl-z # Use -e: Enable emacs-mode
 
 
 case ${OSTYPE} in 
@@ -72,7 +72,7 @@ case ${OSTYPE} in
     if [ -d "${PYENV_ROOT}" ]; then
       export PATH=${PYENV_ROOT}/bin:$PATH
       eval "$(pyenv init -)"
-      # eval "$(pyenv virtualenv-init -)"
+      eval "$(pyenv virtualenv-init -)"
     fi
     export PATH="$HOME/.pyenv/anaconda-2.4.0/bin:$PATH"
 
