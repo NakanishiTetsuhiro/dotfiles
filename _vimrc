@@ -40,6 +40,9 @@ noremap <Leader>vrc :tabe ~/.vimrc<CR>
 " Invalid ex mode
 nnoremap Q <Nop>
 
+" <F5>で編集中のファイルをブラウザで表示
+nmap <F5> :PrevimOpen<CR>
+
 
 "---------------------------
 " dein.vim settings
@@ -114,10 +117,21 @@ call dein#add('shougo/neocomplete.vim')
 call dein#add('tpope/vim-fugitive')
 
 
-" Colorschemes
+"-------------------------
+" Colorscheme
+"-------------------------
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('tomasr/molokai')
+call dein#add('sjl/badwolf')
+
+syntax on
+" colorscheme molokai
+colorscheme badwolf
+highlight Normal ctermbg=none
+set t_Co=256
+"-------------------------
+
 
 
 "---------------------------
@@ -137,7 +151,7 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 
 " Syntax check
-call dein#add('scrooloose/syntastic.git')
+" call dein#add('scrooloose/syntastic.git')
 
 
 " Markdown Preview
@@ -174,14 +188,6 @@ filetype plugin indent on
 if dein#check_install()
   call dein#install()
 endif
-
-
-"-------------------------
-" Colorscheme
-"-------------------------
-syntax on
-colorscheme molokai
-set t_Co=256
 
 
 "-------------------------
