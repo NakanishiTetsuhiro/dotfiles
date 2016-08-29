@@ -13,6 +13,7 @@ set guifont=Ricty:h14
 set backspace=indent,eol,start
 set foldlevel=100 "Don't autofold anything
 set wildmode=list,full
+set ignorecase
 
 " Automatically move the cursor to the last editing position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -35,13 +36,11 @@ noremap <CR> o<ESC>
 " Insert Single Character when typing ,s
 nmap <silent> ,s "=nr2char(getchar())<cr>P
 
-noremap <Leader>vrc :tabe ~/.vimrc<CR>
+noremap <Leader>vrc :tabe $HOME/.vimrc<CR>
+noremap <Leader>zrc :tabe $HOME/.zshrc<CR>
 
 " Invalid ex mode
 nnoremap Q <Nop>
-
-" <F5>で編集中のファイルをブラウザで表示
-nmap <F5> :PrevimOpen<CR>
 
 
 "---------------------------
@@ -120,7 +119,9 @@ call dein#add('shougo/neocomplete.vim')
 " g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
 
+"---------------------------
 " Git
+"---------------------------
 call dein#add('tpope/vim-fugitive')
 
 
@@ -133,19 +134,18 @@ call dein#add('tomasr/molokai')
 call dein#add('sjl/badwolf')
 
 syntax on
-" colorscheme molokai
-colorscheme badwolf
+colorscheme molokai
+" colorscheme badwolf
 highlight Normal ctermbg=none
 set t_Co=256
 "-------------------------
-
 
 
 "---------------------------
 " neocomplcache
 "---------------------------
 call dein#add('Shougo/neocomplcache')
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
@@ -157,24 +157,38 @@ let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 
+"---------------------------
+" vimproc 
+"---------------------------
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+
+
+"---------------------------
 " Syntax check
+"---------------------------
 " call dein#add('scrooloose/syntastic.git')
 
 
+"---------------------------
 " Markdown Preview
-" If want to preview Markdown file please type :PrevimOpen
+"---------------------------
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
 call dein#add('tyru/open-browser.vim')
 au BufRead,BufNewFile *.md set filetype=markdown
-" let g:previm_open_cmd = 'open -a Firefox'
+" <F5>で編集中のファイルをブラウザで表示
+nmap <F5> :PrevimOpen<CR>
 
 
+"---------------------------
 " ctags assist. Type :TagsGenerate when update ctags
+"---------------------------
 call dein#add('szw/vim-tags')
 
 
+"---------------------------
 " etc
+"---------------------------
 " Type gcc when toggle comment out
 call dein#add('tomtom/tcomment_vim')
 call dein#add('tpope/vim-surround')
