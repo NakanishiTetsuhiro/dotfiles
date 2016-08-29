@@ -250,9 +250,9 @@ endif
 "---------------------------
 " Settings for each OS
 "---------------------------
-if has('mac')
-    set clipboard+=unnamed
-endif
+" if has('mac')
+"     set clipboard+=unnamed
+" endif
 
 
 "---------------------------
