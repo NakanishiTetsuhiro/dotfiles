@@ -52,7 +52,7 @@ case ${OSTYPE} in
 
   linux*)
     # Settings for Linux
-    alias open=gnome-open
+    alias open=thunar
     alias pbcopy='xsel --clipboard --input'
     alias ls='ls --color=auto'
   ;;
