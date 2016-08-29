@@ -88,14 +88,21 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 
-" Filer
-" call dein#add('scrooloose/nerdtree')
-"   nnoremap <silent><C-e> :NERDTreeToggle<CR>
-" call dein#add('kien/ctrlp.vim')
+"---------------------------
+" VimFiler
+"---------------------------
 call dein#add('Shougo/vimfiler')
+" vim 標準のファイラを置き換える
+let g:vimfiler_as_default_explorer = 1
+" デフォルトだと Enter でディレクトリに入ってしまって好みと合わないので、Enter は単にツリーを開くだけにした。h と l で "親ディレクトリに移動" と "子ディレクトリに移動" がデフォルトでできて対称性あるので、こっちの設定のが好み
+autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
+" C-X C-T で IDE みたいなファイルツリーを開く。width の値を適当に変えると大きさが変わる
+noremap <C-E> :VimFiler -split -simple -winwidth=40 -no-quit<ENTER>
 
 
+"---------------------------
 " Neocomplete
+"---------------------------
 call dein#add('shougo/neocomplete.vim')
 
 
