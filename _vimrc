@@ -34,7 +34,7 @@ noremap <Leader>q :q<CR>
 noremap <Leader>t :tabnew<CR>
 noremap <CR> o<ESC>
 " Insert Single Character when typing ,s
-nmap <silent> ,s "=nr2char(getchar())<cr>P
+nmap <silent> <Leader>s "=nr2char(getchar())<cr>P
 
 noremap <Leader>vrc :tabe $HOME/.vimrc<CR>
 noremap <Leader>zrc :tabe $HOME/.zshrc<CR>
@@ -170,14 +170,13 @@ call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
 
 "---------------------------
-" Markdown Preview
+" Markdown Previewer
 "---------------------------
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
-call dein#add('tyru/open-browser.vim')
 au BufRead,BufNewFile *.md set filetype=markdown
-" <F5>で編集中のファイルをブラウザで表示
 nmap <F5> :PrevimOpen<CR>
+call dein#add('tyru/open-browser.vim')
 
 
 "---------------------------
