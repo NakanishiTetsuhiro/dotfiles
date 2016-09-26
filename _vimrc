@@ -38,6 +38,7 @@ nmap <silent> <Leader>s "=nr2char(getchar())<cr>P
 
 noremap <Leader>vrc :tabe $HOME/.vimrc<CR>
 noremap <Leader>zrc :tabe $HOME/.zshrc<CR>
+noremap <Leader>trc :tabe $HOME/.tmux.conf<CR>
 
 " Invalid ex mode
 nnoremap Q <Nop>
@@ -194,10 +195,17 @@ call dein#add('tpope/vim-surround')
 call dein#add('easymotion/vim-easymotion')
   let g:EasyMotion_startofline=0
 call dein#add('christoomey/vim-tmux-navigator')
-  nmap <silent> <nop> :TmuxNavigateDown<cr>
+  " let g:tmux_navigator_no_mappings = 1
+  " nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+  " nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+  " nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+  " nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+  " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 
+"---------------------------
 " You can specify revision/branch/tag.
+"---------------------------
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
 call dein#end()
@@ -236,7 +244,6 @@ if &term =~ "xterm"
     let &t_te .= "\e[?2004l"
     let &pastetoggle = "\e[201~"
 
-    " function! を使うとfunctionを上書きできるようになる
     function! XTermPasteBegin(ret)
         set paste
         return a:ret
