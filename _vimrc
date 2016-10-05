@@ -139,7 +139,6 @@ colorscheme molokai
 " colorscheme badwolf
 highlight Normal ctermbg=none
 set t_Co=256
-"-------------------------
 
 
 "---------------------------
@@ -168,6 +167,13 @@ call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 " Syntax check
 "---------------------------
 " call dein#add('scrooloose/syntastic.git')
+
+
+"---------------------------
+" HTML
+"---------------------------
+call dein#add('mattn/emmet-vim')
+let g:user_emmet_leader_key='<C-Y>'
 
 
 "---------------------------
