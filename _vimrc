@@ -47,16 +47,22 @@ nnoremap Q <Nop>
 "---------------------------
 " dein.vim settings
 "---------------------------
-if &compatible
-  set nocompatible               " Be iMproved
+" プラグインが実際にインストールされるディレクトリ
+let s:dein_dir = expand('~/.cache/dein')
+" dein.vim 本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+" dein.vim がなければ github から落としてくる
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-set runtimepath^=$HOME/.vim/dein.vim/repos/github.com/Shougo/dein.vim
-
-call dein#begin(expand('$HOME/.vim/dein.vim'))
-
-" Let dein manage dein
-call dein#add('Shougo/dein.vim')
+" 設定開始
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
 
 "---------------------------
@@ -209,14 +215,12 @@ call dein#add('christoomey/vim-tmux-navigator')
   " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 
-"---------------------------
-" You can specify revision/branch/tag.
-"---------------------------
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-call dein#end()
-
 filetype plugin indent on
+
+  " 設定終了
+  call dein#end()
+  call dein#save_state()
+endif
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
