@@ -15,9 +15,6 @@ set foldlevel=100 "Don't autofold anything
 set wildmode=list,full
 set ignorecase
 
-" Automatically move the cursor to the last editing position
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
 
 "-------------------------
 " Key Bindings
@@ -57,7 +54,7 @@ if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+ execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
 " 設定開始
@@ -163,15 +160,15 @@ if dein#load_state(s:dein_dir)
   " HTML
   "---------------------------
   call dein#add('mattn/emmet-vim')
-  let g:user_emmet_leader_key='<C-Y>'
+    let g:user_emmet_leader_key='<C-Y>'
   
   "---------------------------
   " Markdown Previewer
   "---------------------------
   call dein#add('plasticboy/vim-markdown')
   call dein#add('kannokanno/previm')
-  au BufRead,BufNewFile *.md set filetype=markdown
-  nmap <F5> :PrevimOpen<CR>
+    au BufRead,BufNewFile *.md set filetype=markdown
+    nmap <F5> :PrevimOpen<CR>
   call dein#add('tyru/open-browser.vim')
   
   "---------------------------
@@ -207,19 +204,23 @@ if dein#check_install()
 endif
 
 
+"-------------------------
+" ?
+"-------------------------
 filetype plugin indent on
 
 
 "-------------------------
-" Automatically move the current directory
+" Color scheme
 "-------------------------
 " colorschemeを先にかく
+syntax enable
 colorscheme molokai
 set t_co=256
 
-syntax enable
 " 背景色をTerminalの色と同じにする
-highlight normal ctermbg=none
+" highlight normal ctermbg=none
+
 
 "-------------------------
 " Automatically move the current directory
@@ -259,10 +260,16 @@ if &term =~ "xterm"
 endif
 
 
-""""""""""""""""""""""""""""""
+"---------------------------
+" Automatically move the cursor to the last editing position
+"---------------------------
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+
+"---------------------------
 " 全角スペースの表示(動いてるかわからん)
 " http://inari.hatenablog.com/entry/2014/05/05/231307
-""""""""""""""""""""""""""""""
+"---------------------------
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 endfunction
