@@ -168,7 +168,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('plasticboy/vim-markdown')
   call dein#add('kannokanno/previm')
     au BufRead,BufNewFile *.md set filetype=markdown
-    nmap <F5> :PrevimOpen<CR>
+    nnoremap <F5> :PrevimOpen<CR>
   call dein#add('tyru/open-browser.vim')
   
   "---------------------------
