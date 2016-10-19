@@ -14,6 +14,7 @@ set backspace=indent,eol,start
 set foldlevel=100 "Don't autofold anything
 set wildmode=list,full
 set ignorecase
+set laststatus=2
 
 
 "-------------------------
@@ -130,7 +131,16 @@ if dein#load_state(s:dein_dir)
   call dein#add('w0ng/vim-hybrid')
   call dein#add('tomasr/molokai')
   call dein#add('sjl/badwolf')
+  call dein#add('notpratheek/vim-luna')
   
+  "-------------------------
+  " Statusbar and tabline
+  "-------------------------
+  call dein#add('bling/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  " タブラインにもairlineを適用
+  let g:airline#extensions#tabline#enabled = 1
+
   "---------------------------
   " neocomplcache
   "---------------------------
@@ -211,15 +221,18 @@ filetype plugin indent on
 
 
 "-------------------------
-" Color scheme
+" Color scheme and theme
 "-------------------------
-" colorschemeを先にかく
 syntax enable
 colorscheme molokai
 set t_co=256
+" let g:airline_theme='luna'
+" let g:airline_theme='monochrome'
+" let g:airline_theme='molokai'
+let g:airline_theme='raven'
 
 " 背景色をTerminalの色と同じにする
-" highlight normal ctermbg=none
+highlight normal ctermbg=none
 
 
 "-------------------------
