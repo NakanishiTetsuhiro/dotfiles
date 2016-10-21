@@ -214,15 +214,6 @@ augroup BufferAu
 augroup END
 
 
-"-------------------------
-" Automatically changed to single-byte input when switch normal mode.
-"-------------------------
-function! ImInActivate()
-      call system('fcitx-remote -c')
-endfunction
-inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
-
-
 "---------------------------
 " 全角スペースの表示(動いてるかわからん)
 " http://inari.hatenablog.com/entry/2014/05/05/231307
@@ -264,6 +255,9 @@ endif
 "---------------------------
 " Settings for each OS
 "---------------------------
-" if has('mac')
-"     set clipboard+=unnamed
-" endif
+if has('mac')
+    source ~/dotfiles/vimrcs/for_mac.vim
+elseif has("unix")
+    source ~/dotfiles/vimrcs/for_linux.vim
+endif
+
