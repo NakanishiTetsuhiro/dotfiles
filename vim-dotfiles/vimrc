@@ -1,0 +1,8 @@
+source $HOME/dotfiles/vim-dotfiles/basic.vim
+source $HOME/dotfiles/vim-dotfiles/key_bindings.vim
+source $HOME/dotfiles/vim-dotfiles/dein.vim_settings.vim
+source $HOME/dotfiles/vim-dotfiles/related_plugins.vim
+source $HOME/dotfiles/vim-dotfiles/color_and_theme.vim
+source $HOME/dotfiles/vim-dotfiles/for_mac.vim
+source $HOME/dotfiles/vim-dotfiles/for_linux.vim
+
