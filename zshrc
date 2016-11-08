@@ -78,9 +78,8 @@ export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 #-------------------------
 # Golang
 #-------------------------
-export GOROOT=~/.golang
-export GOPATH=$GOROOT/packages
-export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 
 #-------------------------
