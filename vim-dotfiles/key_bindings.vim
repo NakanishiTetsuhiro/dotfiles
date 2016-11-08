@@ -37,3 +37,5 @@ nnoremap <F5> :PrevimOpen<CR>
 " Vim easymotion
 let g:EasyMotion_startofline=0
 
+" Tag bar
+nmap <F8> :TagbarToggle<CR>
