@@ -76,6 +76,14 @@ export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 
 
 #-------------------------
+# Golang
+#-------------------------
+export GOROOT=~/.golang
+export GOPATH=$GOROOT/packages
+export PATH=$PATH:$GOROOT/bin
+
+
+#-------------------------
 # pyenv config
 #-------------------------
 export PYENV_ROOT="$HOME/.pyenv"
