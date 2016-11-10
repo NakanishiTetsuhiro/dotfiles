@@ -1,9 +1,7 @@
 syntax enable
-colorscheme molokai
-" let g:airline_theme='luna'
-" let g:airline_theme='monochrome'
-" let g:airline_theme='molokai'
-let g:airline_theme='raven'
+colorscheme onedark 
+" let g:airline_theme='raven'
+let g:airline_theme='onedark'
 
 " タブラインにもairlineを適用
 let g:airline#extensions#tabline#enabled = 1
