@@ -14,6 +14,7 @@ deploy() {
     ln -snv "$HOME/dotfiles/tmux.conf" $HOME/.tmux.conf
     ln -snv "$HOME/dotfiles/ctags" $HOME/.ctags
     ln -snv "$HOME/dotfiles/vim-dotfiles/vimrc" $HOME/.vimrc
+    ln -snv "$HOME/dotfiles/vim-dotfiles/gvimrc" $HOME/.gvimrc
 }
 
 deploy
