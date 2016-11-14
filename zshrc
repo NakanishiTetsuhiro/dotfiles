@@ -62,13 +62,6 @@ case ${OSTYPE} in
 
 
 #-------------------------
-# rbenv config
-#-------------------------
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-
-#-------------------------
 # export 
 #-------------------------
 export PATH=$HOME/bin:/usr/local/bin:$PATH
