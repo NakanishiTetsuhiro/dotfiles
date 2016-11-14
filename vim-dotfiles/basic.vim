@@ -16,4 +16,4 @@ set wildmode=list,full
 set ignorecase
 set laststatus=2
 set hidden " :bコマンドでbufferを切り替える時に編集中ファイルを保存しなくても良くなる機能
-
+set clipboard=unnamed,autoselect
