@@ -3,7 +3,6 @@ let mapleader = "\<Space>"
 noremap <Esc><Esc> :<C-u>nohlsearch<cr><Esc>
 noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 noremap <Leader>w :w<CR>
-noremap <Leader>q :q<CR>
 noremap <Leader>t :tabnew<CR>
 noremap <CR> o<ESC>
 noremap <Leader>vrc :tabe $HOME/.vimrc<CR>

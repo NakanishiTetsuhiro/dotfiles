@@ -79,7 +79,7 @@ filetype plugin indent on
 
 
 source $HOME/dotfiles/vim-dotfiles/basic.vim
-source $HOME/dotfiles/vim-dotfiles/key_bindings.vim
+source $HOME/dotfiles/vim-dotfiles/key-mappings.vim
 source $HOME/dotfiles/vim-dotfiles/related_plugins.vim
 source $HOME/dotfiles/vim-dotfiles/color_and_theme.vim
 source $HOME/dotfiles/vim-dotfiles/for_mac.vim
