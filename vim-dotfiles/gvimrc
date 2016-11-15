@@ -1,1 +1,4 @@
-set guifont=Monospace\ 11
+if has("unix")
+    set guifont=Monospace\ 11
+endif
+
