@@ -5,9 +5,9 @@ noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 noremap <Leader>w :w<CR>
 noremap <Leader>t :tabnew<CR>
 noremap <CR> o<ESC>
-noremap <Leader>vrc :tabe $HOME/.vimrc<CR>
-noremap <Leader>zrc :tabe $HOME/.zshrc<CR>
-noremap <Leader>trc :tabe $HOME/.tmux.conf<CR>
+noremap <Leader>vrc :e $HOME/.vimrc<CR>
+noremap <Leader>zrc :e $HOME/.zshrc<CR>
+noremap <Leader>trc :e $HOME/.tmux.conf<CR>
 " バッファに関するキーバインド：http://ivxi.hatenablog.com/entry/2013/05/23/163825
 nnoremap <silent>bp :bprevious<CR>
 nnoremap <silent>bn :bnext<CR>
