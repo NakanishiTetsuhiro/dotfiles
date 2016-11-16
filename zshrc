@@ -57,6 +57,13 @@ case ${OSTYPE} in
     alias open=thunar
     alias pbcopy='xsel --clipboard --input'
     alias ls='ls --color=auto'
+
+    #----- trash-cli
+    # >& これでも同じ意味
+    # /dev/null 常に空になるファイルのこと
+    if which trash-put &> /dev/null; then
+        alias rm='trash-put'
+    fi
   ;;
   esac
 
