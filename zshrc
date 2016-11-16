@@ -92,3 +92,11 @@ if [ -d "${PYENV_ROOT}" ]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+
+#-------------------------
+# pyenv config
+#-------------------------
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
+
