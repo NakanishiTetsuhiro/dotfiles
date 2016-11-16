@@ -26,6 +26,15 @@ NeoBundle 'shougo/neocomplete.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'Shougo/vimproc', {
+			\	'build' : {
+			\		'windows' : 'make -f make_mingw64.mak',
+			\		'cygwin'  : 'make -f make_cygwin.mak',
+			\		'mac'     : 'make -f make_mac.mak',
+			\		'unix'    : 'make -f make_unix.mak',
+			\	},
+			\ }
+" }}}
 
 " Colorscheme
 NeoBundle 'altercation/vim-colors-solarized'
@@ -54,7 +63,6 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'tomtom/tcomment_vim' " Type gcc when toggle comment out
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'Shougo/vimproc.vim', {'build' : 'make'}
 NeoBundle 'davidhalter/jedi-vim'
 " NeoBundle 'easymotion/vim-easymotion'
 " NeoBundle 'scrooloose/syntastic.git'
@@ -66,11 +74,3 @@ filetype plugin indent on
 " インストールのチェック
 NeoBundleCheck
 
-
-
-source $HOME/dotfiles/vim-dotfiles/basic.vim
-source $HOME/dotfiles/vim-dotfiles/key_bindings.vim
-source $HOME/dotfiles/vim-dotfiles/related_plugins.vim
-source $HOME/dotfiles/vim-dotfiles/color_and_theme.vim
-source $HOME/dotfiles/vim-dotfiles/for_mac.vim
-source $HOME/dotfiles/vim-dotfiles/for_linux.vim
