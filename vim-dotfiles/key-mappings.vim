@@ -5,7 +5,6 @@ noremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 noremap <Leader>w :w<CR>
 noremap <Leader>t :tabnew<CR>
 noremap <CR> o<ESC>
-noremap <Leader>vrc :e $HOME/.vimrc<CR>
 noremap <Leader>zrc :e $HOME/.zshrc<CR>
 noremap <Leader>trc :e $HOME/.tmux.conf<CR>
 " バッファに関するキーバインド：http://ivxi.hatenablog.com/entry/2013/05/23/163825
@@ -22,8 +21,8 @@ nnoremap Q <Nop>
 " nnoremap <Leader>- <C-w>5-
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
-nnoremap <C-v> "+gP
-inoremap <C-v> "+gP
+nnoremap <Insert> "+gP
+inoremap <Insert> <Esc>"+gPa
 
 " Insert Single Character when typing ,s
 nmap <silent> <Leader>s "=nr2char(getchar())<cr>P
