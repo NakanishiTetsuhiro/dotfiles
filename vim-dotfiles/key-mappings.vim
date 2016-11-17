@@ -22,6 +22,7 @@ nnoremap Q <Nop>
 " nnoremap <Leader>- <C-w>5-
 inoremap <C-j> <Esc>
 vnoremap <C-j> <Esc>
+nnoremap <C-v> "+gP
 
 " Insert Single Character when typing ,s
 nmap <silent> <Leader>s "=nr2char(getchar())<cr>P
