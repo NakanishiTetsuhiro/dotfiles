@@ -9,6 +9,13 @@ fi
 #-------------------------
 # Alias
 #-------------------------
+# 上書きしたい場合は >| を使う
+setopt noclobber
+
+
+#-------------------------
+# Alias
+#-------------------------
 alias l='ls -l'
 alias v=vim
 alias g=git
@@ -94,7 +101,7 @@ fi
 
 
 #-------------------------
-# pyenv config
+# rbenv config
 #-------------------------
 [[ -d ~/.rbenv  ]] && \
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
