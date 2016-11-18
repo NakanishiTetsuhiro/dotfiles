@@ -28,12 +28,15 @@ endif
 " Dein setting start
 call dein#begin(s:dein_dir)
 
+if has('unix') || has('mac')
+    call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+endif
+
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimfiler')
 call dein#add('tpope/vim-fugitive')
 call dein#add('shougo/neocomplete.vim')
 call dein#add('Konfekt/FastFold')
-call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('mattn/emmet-vim')
 call dein#add('majutsushi/tagbar')
 
