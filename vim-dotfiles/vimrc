@@ -1,17 +1,26 @@
-" プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Author: NakanishiTetsuhiro
+" Github: https://github.com/NakanishiTetsuhiro/dotfiles
+"
+" Please execute the following command manually at first time startup
+" git clone https://github.com/Shougo/dein.vim.git ~/.cache/dein/repos/Shougo/dein.vim
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" dein.vim がなければ github から落としてくる
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
- execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+if &compatible
+  set nocompatible
 endif
 
-" Setting start
+" Plugins install location
+let s:dein_dir = expand('~/.cache/dein')
+" dein.vim location
+let s:dein_repo_dir = s:dein_dir . '/repos/Shougo/dein.vim'
+
+execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+
+
+" Dein setting start
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
@@ -57,7 +66,7 @@ if dein#load_state(s:dein_dir)
   " call dein#add('easymotion/vim-easymotion')
   " call dein#add('scrooloose/syntastic.git')
 
-  " 設定終了
+  " Dein setting end
   call dein#end()
   call dein#save_state()
 endif
@@ -70,14 +79,7 @@ endif
 filetype plugin indent on
 
 
-
-
-
-
-
-
-
-
+" Other Settings
 source $HOME/dotfiles/vim-dotfiles/basic.vim
 source $HOME/dotfiles/vim-dotfiles/key-mappings.vim
 source $HOME/dotfiles/vim-dotfiles/related_plugins.vim
