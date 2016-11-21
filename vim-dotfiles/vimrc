@@ -20,10 +20,8 @@ let s:dein_repo_dir = s:dein_dir . '/repos/Shougo/dein.vim'
  
 if has('unix') || has('mac')
     execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
- 
-if has('win32') || has ('win64')
-    execute 'set runtimepath^=C:\Users\NakanishiWinVM\.cache\dein\repos\Shougo\dein.vim'
+elseif has('win32') || has ('win64')
+    execute 'set runtimepath^=$HOME\.cache\dein\repos\Shougo\dein.vim'
 endif
 
 " Dein setting start
