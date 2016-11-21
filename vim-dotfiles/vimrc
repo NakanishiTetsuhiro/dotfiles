@@ -88,7 +88,7 @@ filetype plugin indent on
 " Other Settings
 source $HOME/dotfiles/vim-dotfiles/basic.vim
 source $HOME/dotfiles/vim-dotfiles/key-mappings.vim
-source $HOME/dotfiles/vim-dotfiles/related_plugins.vim
+source /home/nakanishi/dotfiles/vim-dotfiles/plugin_settings.vim
 source $HOME/dotfiles/vim-dotfiles/color_and_theme.vim
 source $HOME/dotfiles/vim-dotfiles/other_settings.vim
 
