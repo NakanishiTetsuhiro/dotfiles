@@ -14,6 +14,7 @@ endif
 
 " Plugins install location
 let s:dein_dir = expand('~/.cache/dein')
+
 " dein.vim location
 let s:dein_repo_dir = s:dein_dir . '/repos/Shougo/dein.vim'
  
@@ -89,6 +90,5 @@ source $HOME/dotfiles/vim-dotfiles/basic.vim
 source $HOME/dotfiles/vim-dotfiles/key-mappings.vim
 source $HOME/dotfiles/vim-dotfiles/related_plugins.vim
 source $HOME/dotfiles/vim-dotfiles/color_and_theme.vim
-source $HOME/dotfiles/vim-dotfiles/for_mac.vim
-source $HOME/dotfiles/vim-dotfiles/for_linux.vim
+source $HOME/dotfiles/vim-dotfiles/other_settings.vim
 
