@@ -12,29 +12,32 @@ if &compatible
   set nocompatible
 endif
 
-" Plugins install location
-let s:dein_dir = expand('~/.cache/dein')
+let s:dein_dir = expand('~/.cache/dein') " Plugins install location
 
-" dein.vim location
-let s:dein_repo_dir = s:dein_dir . '/repos/Shougo/dein.vim'
+let s:dein_repo_dir = s:dein_dir . '/repos/Shougo/dein.vim' " dein.vim location
  
-if has('unix') || has('mac')
+if has('unix') || has('mac') " Set runtimepath
     execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 elseif has('win32') || has ('win64')
     execute 'set runtimepath^=$HOME\.cache\dein\repos\Shougo\dein.vim'
 endif
 
+
 " Dein setting start
 call dein#begin(s:dein_dir)
+
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimfiler')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/vimshell.vim')
+call dein#add('Shougo/neosnippet-snippets')
 
 if has('unix') || has('mac')
     call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 endif
 
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimfiler')
 call dein#add('tpope/vim-fugitive')
-call dein#add('shougo/neocomplete.vim')
 call dein#add('Konfekt/FastFold')
 call dein#add('mattn/emmet-vim')
 call dein#add('majutsushi/tagbar')
@@ -66,9 +69,7 @@ call dein#add('fatih/vim-go')
 call dein#add('tomtom/tcomment_vim') " Type gcc when toggle comment out
 call dein#add('tpope/vim-surround')
 call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('Shougo/vimshell.vim')
-call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-call dein#add('davidhalter/jedi-vim')
+" call dein#add('davidhalter/jedi-vim')
 " call dein#add('easymotion/vim-easymotion')
 " call dein#add('scrooloose/syntastic.git')
 
@@ -86,7 +87,7 @@ filetype plugin indent on
 " Other Settings
 source $HOME/dotfiles/vim-dotfiles/basic.vim
 source $HOME/dotfiles/vim-dotfiles/key-mappings.vim
-source /home/nakanishi/dotfiles/vim-dotfiles/plugin_settings.vim
+source $HOME/dotfiles/vim-dotfiles/plugin_settings.vim
 source $HOME/dotfiles/vim-dotfiles/color_and_theme.vim
 source $HOME/dotfiles/vim-dotfiles/other_settings.vim
 
