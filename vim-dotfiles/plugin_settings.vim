@@ -223,3 +223,8 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 "   set conceallevel=2 concealcursor=niv
 " endif
 
+
+"---------------------------
+" NERDTree
+"---------------------------
+map <C-e> :NERDTreeToggle<CR>
