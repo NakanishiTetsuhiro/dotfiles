@@ -42,6 +42,10 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('Konfekt/FastFold')
 call dein#add('mattn/emmet-vim')
 call dein#add('majutsushi/tagbar')
+call dein#add('tomtom/tcomment_vim') " Type gcc when toggle comment out
+call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('tpope/vim-surround')
+" call dein#add('scrooloose/syntastic.git')
 
 " Colorscheme
 call dein#add('altercation/vim-colors-solarized')
@@ -66,13 +70,8 @@ call dein#add('szw/vim-tags')
 " Golang
 call dein#add('fatih/vim-go')
 
-" etc
-call dein#add('tomtom/tcomment_vim') " Type gcc when toggle comment out
-call dein#add('tpope/vim-surround')
-call dein#add('christoomey/vim-tmux-navigator')
+" Python
 " call dein#add('davidhalter/jedi-vim')
-" call dein#add('easymotion/vim-easymotion')
-" call dein#add('scrooloose/syntastic.git')
 
 call dein#end()
 call dein#save_state()
