@@ -26,8 +26,10 @@ endif
 " Dein setting start
 call dein#begin(s:dein_dir)
 
-" call dein#add('Shougo/unite.vim')
-" call dein#add('Shougo/vimfiler')
+call dein#add('Shougo/unite.vim')
+call dein#add('ujihisa/unite-colorscheme')
+
+call dein#add('Shougo/vimfiler')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/vimshell.vim')
@@ -37,7 +39,6 @@ if has('unix') || has('mac')
     call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 endif
 
-call dein#add('scrooloose/nerdtree')
 call dein#add('tpope/vim-fugitive')
 call dein#add('Konfekt/FastFold')
 call dein#add('mattn/emmet-vim')
@@ -45,7 +46,6 @@ call dein#add('majutsushi/tagbar')
 call dein#add('tomtom/tcomment_vim') " Type gcc when toggle comment out
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('tpope/vim-surround')
-" call dein#add('scrooloose/syntastic.git')
 
 " Colorscheme
 call dein#add('altercation/vim-colors-solarized')
