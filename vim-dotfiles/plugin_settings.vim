@@ -1,30 +1,26 @@
 "---------------------------
 " unite.vim
 "---------------------------
-" let g:unite_enable_start_insert=1 " 入力モードで開始する
-" nnoremap <silent> ,ub :<C-u>Unite buffer<CR> " バッファ一覧
-" nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR> " ファイル一覧
-" nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR> " レジスタ一覧
-" nnoremap <silent> ,um :<C-u>Unite file_mru<CR> " 最近使用したファイル一覧
-" nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR> " 常用セット
-" nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR> " 全部乗せ
-" au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split') " ウィンドウを分割して開く
-" au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-" au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit') " ウィンドウを縦に分割して開く
-" au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-" au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q " ESCキーを2回押すと終了する
-" au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+" The prefix key.
+nnoremap    [unite]   <Nop>
+nmap    <Leader>f [unite]
+ 
+" unite.vim keymap
+" https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
+nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
+nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
+ 
 
 
 "---------------------------
 " VimFiler
 "---------------------------
-" " vim 標準のファイラを置き換える
-" let g:vimfiler_as_default_explorer = 1
-" " デフォルトだと Enter でディレクトリに入ってしまって好みと合わないので、Enter は単にツリーを開くだけにした。h と l で "親ディレクトリに移動" と "子ディレクトリに移動" がデフォルトでできて対称性あるので、こっちの設定のが好み
+" vim 標準のファイラを置き換える
+let g:vimfiler_as_default_explorer = 1
+" デフォルトだと Enter でディレクトリに入ってしまって好みと合わないので、Enter は単にツリーを開くだけにした。h と l で "親ディレクトリに移動" と "子ディレクトリに移動" がデフォルトでできて対称性あるので、こっちの設定のが好み
 " autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
-" " C-X C-T で IDE みたいなファイルツリーを開く。width の値を適当に変えると大きさが変わる
-" noremap <C-E> :VimFiler -split -simple -winwidth=40 -no-quit<ENTER>
+" C-X C-T で IDE みたいなファイルツリーを開く。width の値を適当に変えると大きさが変わる
+noremap <C-E> :VimFiler -split -simple -winwidth=40 -no-quit<ENTER>
 
 
 "---------------------------
@@ -193,21 +189,15 @@ imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-" " SuperTab like snippets behavior.
-" "imap <expr><TAB>
-" " \ pumvisible() ? "\<C-n>" :
-" " \ neosnippet#expandable_or_jumpable() ?
-" " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-" " For conceal markers.
-" if has('conceal')
-"   set conceallevel=2 concealcursor=niv
-" endif
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-
-"---------------------------
-" NERDTree
-"---------------------------
-map <C-e> :NERDTreeToggle<CR>
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
