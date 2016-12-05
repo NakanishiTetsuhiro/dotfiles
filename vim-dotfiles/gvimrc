@@ -1,6 +1,9 @@
 set guioptions-=m
 set guioptions-=T
 
+set lines=48
+set columns=160
+
 
 if has("unix")
     set guifont=Monospace\ 11
