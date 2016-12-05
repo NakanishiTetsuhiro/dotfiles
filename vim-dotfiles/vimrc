@@ -72,7 +72,7 @@ call dein#add('szw/vim-tags')
 call dein#add('fatih/vim-go')
 
 " Python
-" call dein#add('davidhalter/jedi-vim')
+call dein#add('davidhalter/jedi-vim')
 
 call dein#end()
 call dein#save_state()

@@ -115,52 +115,50 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "
 " http://kazy.hatenablog.com/entry/2013/07/18/131118
 "---------------------------
-" autocmd FileType python setlocal omnifunc=jedi#completions
-"
-" let g:jedi#auto_vim_configuration = 0
-" let g:jedi#completions_enabled = 0
-"
-" if !exists('g:neocomplete#force_omni_input_patterns')
-"         let g:neocomplete#force_omni_input_patterns = {}
-" endif
-"
-" let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-"
-" " docstringは表示しない
-" " autocmd FileType python setlocal completeopt-=preview
+autocmd FileType python setlocal omnifunc=jedi#completions
 
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#completions_enabled = 0
 
+if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+endif
 
-" " Jedi for python
-" if ! empty(dein#get("jedi-vim"))
-"   let g:jedi#auto_initialization = 1
-"   let g:jedi#auto_vim_configuration = 1
-"
-"   nnoremap [jedi] <Nop>
-"   xnoremap [jedi] <Nop>
-"   nmap <Leader>j [jedi]
-"   xmap <Leader>j [jedi]
-"
-"   let g:jedi#completions_command = "<C-N>"
-"   let g:jedi#goto_assignments_command = "[jedi]g"
-"   let g:jedi#goto_definitions_command = "[jedi]d"
-"   let g:jedi#documentation_command = "[jedi]K"
-"   let g:jedi#rename_command = "[jedi]r"
-"   let g:jedi#usages_command = "[jedi]n"
-"   let g:jedi#popup_select_first = 0
-"   let g:jedi#popup_on_dot = 0
-"
-"   autocmd FileType python setlocal completeopt-=preview
-"
-"   " for w/ neocomplete
-"   if ! empty(dein#get("neocomplete.vim"))
-"     autocmd FileType python setlocal omnifunc=jedi#completions
-"     let g:jedi#completions_enabled = 0
-"     let g:jedi#auto_vim_configuration = 0
-"     let g:neocomplete#force_omni_input_patterns.python =
-"     \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-"   endif
-" endif
+let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
+" docstringは表示しない
+" autocmd FileType python setlocal completeopt-=preview
+
+" Jedi for python
+if ! empty(dein#get("jedi-vim"))
+  let g:jedi#auto_initialization = 1
+  let g:jedi#auto_vim_configuration = 1
+
+  nnoremap [jedi] <Nop>
+  xnoremap [jedi] <Nop>
+  nmap <Leader>j [jedi]
+  xmap <Leader>j [jedi]
+
+  let g:jedi#completions_command = "<C-N>"
+  let g:jedi#goto_assignments_command = "[jedi]g"
+  let g:jedi#goto_definitions_command = "[jedi]d"
+  let g:jedi#documentation_command = "[jedi]K"
+  let g:jedi#rename_command = "[jedi]r"
+  let g:jedi#usages_command = "[jedi]n"
+  let g:jedi#popup_select_first = 0
+  let g:jedi#popup_on_dot = 0
+
+  autocmd FileType python setlocal completeopt-=preview
+
+  " for w/ neocomplete
+  if ! empty(dein#get("neocomplete.vim"))
+    autocmd FileType python setlocal omnifunc=jedi#completions
+    let g:jedi#completions_enabled = 0
+    let g:jedi#auto_vim_configuration = 0
+    let g:neocomplete#force_omni_input_patterns.python =
+    \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+  endif
+endif
 
 
 "---------------------------
