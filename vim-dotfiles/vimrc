@@ -47,6 +47,7 @@ call dein#add('tomtom/tcomment_vim') " Type gcc when toggle comment out
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('tpope/vim-surround')
 call dein#add('junegunn/vim-easy-align')
+call dein#add('thinca/vim-ref')
 
 " Colorscheme
 call dein#add('altercation/vim-colors-solarized')
