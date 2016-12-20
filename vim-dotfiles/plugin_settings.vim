@@ -209,3 +209,11 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+
+"---------------------------
+" vim-ref
+"---------------------------
+" Please install documentation in advance: http://jp.php.net/download-docs.php
+let g:ref_phpmanual_path = $HOME . '/Documents/php-chunked-xhtml' "マニュアルをDLしたディレクトリを指定
+
