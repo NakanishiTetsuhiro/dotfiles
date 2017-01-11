@@ -45,6 +45,7 @@ call dein#add('mattn/emmet-vim')
 call dein#add('majutsushi/tagbar')
 call dein#add('tomtom/tcomment_vim') " Type gcc when toggle comment out
 call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('itmammoth/doorboy.vim')
 call dein#add('tpope/vim-surround')
 call dein#add('junegunn/vim-easy-align')
 call dein#add('thinca/vim-ref')
