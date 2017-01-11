@@ -7,7 +7,8 @@ nmap    <Leader>f [unite]
  
 " unite.vim keymap
 " https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
-nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
+" nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
+nnoremap <silent> [unite]f :VimFiler<CR>
 nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
  
 
@@ -18,9 +19,9 @@ nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 " vim 標準のファイラを置き換える
 let g:vimfiler_as_default_explorer = 1
 " デフォルトだと Enter でディレクトリに入ってしまって好みと合わないので、Enter は単にツリーを開くだけにした。h と l で "親ディレクトリに移動" と "子ディレクトリに移動" がデフォルトでできて対称性あるので、こっちの設定のが好み
-" autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
+autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
 " C-X C-T で IDE みたいなファイルツリーを開く。width の値を適当に変えると大きさが変わる
-noremap <C-E> :VimFiler -split -simple -winwidth=40 -no-quit<ENTER>
+noremap <Leader>vf :VimFiler -split -simple -winwidth=28 -no-quit<CR> 
 
 
 "---------------------------
