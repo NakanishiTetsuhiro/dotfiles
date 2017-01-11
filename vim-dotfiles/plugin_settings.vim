@@ -51,7 +51,8 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ 'scheme' : $HOME.'/.gosh_completions',
+    \ 'php' : $HOME.'/.cache/dein/repos/github.com/nishigori/vim-php-dictionary/dict/PHP.dict'
         \ }
 
 " Define keyword.

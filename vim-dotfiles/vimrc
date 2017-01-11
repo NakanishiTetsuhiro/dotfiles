@@ -49,6 +49,9 @@ call dein#add('tpope/vim-surround')
 call dein#add('junegunn/vim-easy-align')
 call dein#add('thinca/vim-ref')
 
+" Dictionaries
+call dein#add('nishigori/vim-php-dictionary', {'on_ft': 'php'})
+
 " Colorscheme
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('w0ng/vim-hybrid')
