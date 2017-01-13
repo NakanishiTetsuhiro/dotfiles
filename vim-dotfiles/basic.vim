@@ -27,5 +27,5 @@ colorscheme badwolf
 " 背景色をTerminalの色と同じにする
 " highlight normal ctermbg=none
 
-" colorschemeの背景色を無効化する
+" 端末の背景色を無効化する
 set t_ut=
