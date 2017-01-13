@@ -111,7 +111,9 @@ fi
 #-------------------------
 # rbenv config
 #-------------------------
-[[ -d ~/.rbenv  ]] && \
+export RBENV_ROOT="$HOME/.rbenv"
+if [ -d "${RBENV_ROOT}" ]; then
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
+fi
 
