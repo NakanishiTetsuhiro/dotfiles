@@ -220,3 +220,11 @@ nmap ga <Plug>(EasyAlign)
 " Please install documentation in advance: http://jp.php.net/download-docs.php
 let g:ref_phpmanual_path = $HOME . '/Documents/php-chunked-xhtml' "マニュアルをDLしたディレクトリを指定
 
+
+"---------------------------
+" vim-airline
+"---------------------------
+" let g:airline_theme='jellybeans'
+let g:airline_theme='badwolf'
+" タブラインにもairlineを適用
+let g:airline#extensions#tabline#enabled = 1
