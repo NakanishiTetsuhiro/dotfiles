@@ -117,3 +117,12 @@ if [ -d "${RBENV_ROOT}" ]; then
   eval "$(rbenv init -)"
 fi
 
+
+#-------------------------
+# phpenv config ( https://github.com/CHH/phpenv )
+#-------------------------
+export PHPENV_ROOT="$HOME/.phpenv"
+if [ -d "${PHPENV_ROOT}" ]; then
+  export PATH="$HOME/.phpenv/bin:$PATH"
+  eval "$(phpenv init -)"
+fi
