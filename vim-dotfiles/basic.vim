@@ -18,7 +18,6 @@ set laststatus=2
 set hidden " :bコマンドでbufferを切り替える時に編集中ファイルを保存しなくても良くなる機能
 
 " set clipboard=unnamed,autoselect
-set clipboard=unnamedplus
 
 syntax enable
 " colorscheme monokai

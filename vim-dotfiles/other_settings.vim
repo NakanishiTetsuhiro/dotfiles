@@ -38,13 +38,20 @@ endif
 
 
 "---------------------------
-" for UNIX
+" for Mac and Linux settings
 "---------------------------
 if has("unix")
-    " Automatically changed to single-byte input when switch normal mode.
-    function! ImInActivate()    
-          call system('fcitx-remote -c')
-    endfunction
-    inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
-endif
+    let s:uname = system("uname -s")
 
+    if s:uname == "Darwin"
+
+    elseif s:uname == "Linux\n"
+        " Automatically changed to single-byte input when switch normal mode.
+        function! ImInActivate()    
+              call system('fcitx-remote -c')
+        endfunction
+        inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
+
+        set clipboard=unnamedplus
+    endif
+endif
