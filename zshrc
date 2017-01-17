@@ -119,10 +119,6 @@ fi
 
 
 #-------------------------
-# phpenv config ( https://github.com/CHH/phpenv )
+# phpbrew config
 #-------------------------
-export PHPENV_ROOT="$HOME/.phpenv"
-if [ -d "${PHPENV_ROOT}" ]; then
-  export PATH="$HOME/.phpenv/bin:$PATH"
-  eval "$(phpenv init -)"
-fi
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
