@@ -19,7 +19,8 @@ set hidden " :bコマンドでbufferを切り替える時に編集中ファイ�
 
 " set clipboard=unnamed,autoselect
 
-syntax enable
+set syntax=enable
+
 " colorscheme monokai
 colorscheme badwolf
 
