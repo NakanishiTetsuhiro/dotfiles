@@ -25,10 +25,7 @@ setopt noclobber
 # Alias
 #-------------------------
 alias l='ls -l'
-alias v=vim
 alias g=git
-alias ch=checkout
-alias co=commit
 
 
 #-------------------------
