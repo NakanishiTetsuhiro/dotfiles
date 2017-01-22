@@ -9,7 +9,6 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set guifont=Ricty:h14
 set backspace=indent,eol,start
 set foldlevel=100 " Don't autofold anything
 set wildmode=list,full
@@ -19,8 +18,6 @@ set hidden " :bコマンドでbufferを切り替える時に編集中ファイ�
 
 " set clipboard=unnamed,autoselect
 
-set syntax=enable
-
 " colorscheme monokai
 colorscheme badwolf
 
@@ -29,3 +26,29 @@ colorscheme badwolf
 
 " 端末の背景色を無効化する
 set t_ut=
+
+
+"---------------------------
+" for Mac and Linux settings
+"---------------------------
+let OSTYPE = system('uname')
+
+if OSTYPE == "Darwin\n"
+
+    syntax on
+    set guifont=Ricty:h16
+
+elseif OSTYPE == "Linux\n"
+
+    set syntax=enable
+    set guifont=Ricty:h14
+
+    " Automatically changed to single-byte input when switch normal mode.
+    function! ImInActivate()    
+          call system('fcitx-remote -c')
+    endfunction
+    inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
+
+    set clipboard=unnamedplus
+endif
+
