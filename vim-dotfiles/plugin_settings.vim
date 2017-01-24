@@ -225,7 +225,9 @@ let g:ref_phpmanual_path = $HOME . '/Documents/php-chunked-xhtml' "マニュア�
 " vim-airline
 "---------------------------
 " let g:airline_theme='jellybeans'
-let g:airline_theme='badwolf'
+" let g:airline_theme='badwolf'
+" let g:airline_theme='raven'
+let g:airline_theme='zenburn'
 " タブラインにもairlineを適用
 let g:airline#extensions#tabline#enabled = 1
 
