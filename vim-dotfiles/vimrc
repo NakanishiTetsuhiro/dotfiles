@@ -58,6 +58,8 @@ call dein#add('notpratheek/vim-luna')
 call dein#add('joshdick/onedark.vim')
 call dein#add('sickill/vim-monokai')
 call dein#add('junegunn/seoul256.vim')
+call dein#add('dracula/vim')
+call dein#add('jpo/vim-railscasts-theme')
 
 " Statusbar and tabline
 call dein#add('bling/vim-airline')
