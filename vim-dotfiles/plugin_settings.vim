@@ -177,7 +177,7 @@ nnoremap <Leader>pv :PrevimOpen<CR>
 
 
 "---------------------------
-" Tag bar
+" tagbar
 "---------------------------
 nmap <F8> :TagbarToggle<CR>
 
