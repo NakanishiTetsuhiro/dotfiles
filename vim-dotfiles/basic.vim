@@ -18,8 +18,8 @@ set hidden " :bコマンドでbufferを切り替える時に編集中ファイ�
 
 " set clipboard=unnamed,autoselect
 
-" colorscheme monokai
-colorscheme badwolf
+" colorscheme badwolf
+colorscheme seoul256
 
 " 背景色をTerminalの色と同じにする
 " highlight normal ctermbg=none

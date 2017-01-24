@@ -59,6 +59,7 @@ call dein#add('sjl/badwolf')
 call dein#add('notpratheek/vim-luna')
 call dein#add('joshdick/onedark.vim')
 call dein#add('sickill/vim-monokai')
+call dein#add('junegunn/seoul256.vim')
 
 " Statusbar and tabline
 call dein#add('bling/vim-airline')
