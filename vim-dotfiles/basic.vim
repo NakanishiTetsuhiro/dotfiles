@@ -18,15 +18,6 @@ set hidden " :bコマンドでbufferを切り替える時に編集中ファイ�
 
 " set clipboard=unnamed,autoselect
 
-" colorscheme badwolf
-colorscheme seoul256
-
-" 背景色をTerminalの色と同じにする
-" highlight normal ctermbg=none
-
-" 端末の背景色を無効化する
-set t_ut=
-
 
 "---------------------------
 " for Mac and Linux settings
@@ -51,4 +42,23 @@ elseif OSTYPE == "Linux\n"
 
     set clipboard=unnamedplus
 endif
+
+
+"---------------------------
+" Colorscheme
+"---------------------------
+" set background=dark
+" colorscheme hybrid
+" colorscheme railscasts
+" colorscheme badwolf
+colorscheme molokai
+
+autocmd BufEnter *.md colorscheme molokai
+
+" 背景色をTerminalの色と同じにする
+" highlight normal ctermbg=none
+
+" 端末の背景色を無効化する
+set t_ut=
+
 
