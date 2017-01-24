@@ -28,3 +28,9 @@ inoremap <Insert> <Esc>"+gpa
 " Insert Single Character when typing ,s
 nmap <silent> <Leader>s "=nr2char(getchar())<cr>P
 
+" vimgrep
+nnoremap [q :cprevious<CR>   " 前へ
+nnoremap ]q :cnext<CR>       " 次へ
+nnoremap [Q :<C-u>cfirst<CR> " 最初へ
+nnoremap ]Q :<C-u>clast<CR>  " 最後へ
+
