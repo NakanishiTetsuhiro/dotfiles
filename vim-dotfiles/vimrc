@@ -49,6 +49,7 @@ call dein#add('itmammoth/doorboy.vim')
 call dein#add('tpope/vim-surround')
 call dein#add('junegunn/vim-easy-align')
 call dein#add('thinca/vim-ref')
+call dein#add('thinca/vim-quickrun')
 
 " Colorscheme
 call dein#add('altercation/vim-colors-solarized')
