@@ -1,8 +1,8 @@
 set guioptions-=m
 set guioptions-=T
 
-set lines=48
-set columns=160
+set lines=50
+set columns=170
 
 " Disable beep
 set visualbell t_vb=
@@ -12,3 +12,8 @@ if has("unix")
     set guifont=Monospace\ 11
 endif
 
+" Key Mappings
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l  
