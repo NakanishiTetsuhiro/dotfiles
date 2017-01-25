@@ -6,17 +6,12 @@ noremap <Leader>w :w<CR>
 noremap <Leader>q :q<CR>
 noremap <Leader>t :tabnew<CR>
 noremap <CR> o<ESC>
-noremap <Leader>zrc :e $HOME/.zshrc<CR>
-noremap <Leader>trc :e $HOME/.tmux.conf<CR>
-" バッファに関するキーバインド：http://ivxi.hatenablog.com/entry/2013/05/23/163825
-nnoremap <silent>bp :bprevious<CR>
+
+" Related buffer key-bindings( http://ivxi.hatenablog.com/entry/2013/05/23/163825 )
 nnoremap <silent>bn :bnext<CR>
-nnoremap <silent>bm :b#<CR>
-nnoremap <silent>bf :bf<CR>
-nnoremap <silent>bl :bl<CR>
-nnoremap <silent>bm :bm<CR>
+nnoremap <silent>bp :bprevious<CR>
 nnoremap <silent>bd :bdelete<CR>
-nnoremap Q <Nop>
+
 " http://babie.hatenablog.com/entry/20060111/p4
 " nnoremap <Leader>+ <C-w>5+
 " nnoremap <Leader>- <C-w>5-
