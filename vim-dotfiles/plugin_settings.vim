@@ -202,7 +202,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=0 concealcursor=niv
 endif
-
+" My Snippets location
+let g:neosnippet#snippets_directory='~/dotfiles/vim-dotfiles/my-snippets/'
 
 "---------------------------
 " vim-easy-align
