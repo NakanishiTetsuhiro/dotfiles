@@ -29,3 +29,9 @@ nnoremap ]q :cnext<CR>       " 次へ
 nnoremap [Q :<C-u>cfirst<CR> " 最初へ
 nnoremap ]Q :<C-u>clast<CR>  " 最後へ
 
+augroup ArrowOperator
+    autocmd!
+    autocmd BufRead,BufNewFile *.php inoremap -. ->
+    autocmd BufRead,BufNewFile *.php inoremap =. =>
+augroup END
+
