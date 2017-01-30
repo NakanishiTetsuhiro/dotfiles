@@ -35,3 +35,5 @@ augroup ArrowOperator
     autocmd BufRead,BufNewFile *.php inoremap =. =>
 augroup END
 
+" Invalidate yank with deletion at x
+noremap x "_x
