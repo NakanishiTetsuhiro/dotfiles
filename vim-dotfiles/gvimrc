@@ -1,8 +1,8 @@
 set guioptions-=m
 set guioptions-=T
 
-set lines=50
-set columns=170
+set lines=48
+set columns=164
 
 " Disable beep
 set visualbell t_vb=
