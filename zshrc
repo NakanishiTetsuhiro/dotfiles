@@ -63,6 +63,18 @@ setopt share_history        # share command history data
 
 
 #-------------------------
+# linecount
+#-------------------------
+linecount () {
+    if [ $# -eq 1 ]; then
+        awk 'END {print NR}' $1
+    else
+        echo "Error" 1>&2
+    fi
+}
+
+
+#-------------------------
 # Fancy-ctrl-z
 #-------------------------
 fancy-ctrl-z () {
