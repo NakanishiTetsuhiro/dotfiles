@@ -31,8 +31,12 @@ nnoremap ]Q :<C-u>clast<CR>  " 最後へ
 
 augroup ArrowOperator
     autocmd!
-    autocmd BufRead,BufNewFile *.php inoremap -. ->
-    autocmd BufRead,BufNewFile *.php inoremap =. =>
+    autocmd BufRead,BufNewFile *.php inoremap -` ->
+    autocmd BufRead,BufNewFile *.php inoremap =` =>
+augroup END
+
+augroup PhpLinter
+    autocmd BufRead,BufNewFile *.php map <F6> :!php -l %<CR>
 augroup END
 
 " Invalidate yank with deletion at x
