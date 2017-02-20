@@ -25,22 +25,14 @@ set hidden " :bコマンドでbufferを切り替える時に編集中ファイ�
 let OSTYPE = system('uname')
 
 if OSTYPE == "Darwin\n"
-
     syntax on
     set guifont=Ricty:h16
 
 elseif OSTYPE == "Linux\n"
-
     set syntax=enable
     set guifont=Ricty:h14
-
-    " Automatically changed to single-byte input when switch normal mode.
-    function! ImInActivate()    
-          call system('fcitx-remote -c')
-    endfunction
-    inoremap <silent> <C-j> <ESC>:call ImInActivate()<CR>
-
     set clipboard=unnamedplus
+
 endif
 
 
@@ -60,5 +52,4 @@ autocmd BufEnter *.md colorscheme molokai
 
 " 端末の背景色を無効化する
 set t_ut=
-
 
