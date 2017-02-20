@@ -48,6 +48,7 @@ call dein#add('tpope/vim-surround')
 call dein#add('junegunn/vim-easy-align')
 call dein#add('thinca/vim-ref')
 call dein#add('thinca/vim-quickrun')
+call dein#add('vim-scripts/fcitx.vim')
 
 " Colorscheme
 call dein#add('altercation/vim-colors-solarized')
