@@ -18,7 +18,6 @@ set hidden " :bコマンドでbufferを切り替える時に編集中ファイ�
 
 " set clipboard=unnamed,autoselect
 
-
 "---------------------------
 " for Mac and Linux settings
 "---------------------------
@@ -53,3 +52,9 @@ autocmd BufEnter *.md colorscheme molokai
 " 端末の背景色を無効化する
 set t_ut=
 
+
+"---------------------------
+" Syntax check
+"---------------------------
+set makeprg=php\ -l\ %
+set errorformat=%m\ in\ %f\ on\ line\ %l
