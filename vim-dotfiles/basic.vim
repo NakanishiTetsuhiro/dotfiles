@@ -25,7 +25,7 @@ let OSTYPE = system('uname')
 
 if OSTYPE == "Darwin\n"
     syntax on
-    set guifont=Ricty:h16
+    set guifont=Ricty\ Discord:h16
 
 elseif OSTYPE == "Linux\n"
     set syntax=enable

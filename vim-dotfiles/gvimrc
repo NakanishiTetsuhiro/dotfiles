@@ -7,10 +7,9 @@ set columns=164
 " Disable beep
 set visualbell t_vb=
 
-
-if has("unix")
-    set guifont=Monospace\ 11
-endif
+if OSTYPE == "Darwin\n"
+    set guifont=Ricty\ Discord:h18
+fi
 
 " Key Mappings
 nnoremap <c-j> <c-w>j
