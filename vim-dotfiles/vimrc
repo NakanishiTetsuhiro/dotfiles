@@ -22,69 +22,23 @@ elseif has('win32') || has ('win64')
     execute 'set runtimepath^=$HOME\.cache\dein\repos\Shougo\dein.vim'
 endif
 
-
 " Dein setting start
 call dein#begin(s:dein_dir)
 
-call dein#add('Shougo/unite.vim')
-call dein#add('ujihisa/unite-colorscheme')
-call dein#add('Shougo/vimfiler')
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
+  " プラグインリストを収めた TOML ファイル
+  " 予め TOML ファイル（後述）を用意しておく
+  let g:rc_dir    = expand('$HOME/dotfiles/vim-dotfiles')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  " let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
-if has('unix') || has('mac')
-    call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-endif
+  " TOML を読み込み、キャッシュしておく
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  " call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-call dein#add('tpope/vim-fugitive')
-call dein#add('Konfekt/FastFold')
-call dein#add('mattn/emmet-vim')
-" Type gcc when toggle comment out
-call dein#add('tomtom/tcomment_vim') 
-call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('itmammoth/doorboy.vim')
-call dein#add('tpope/vim-surround')
-call dein#add('junegunn/vim-easy-align')
-call dein#add('thinca/vim-ref')
-call dein#add('thinca/vim-quickrun')
-call dein#add('vim-scripts/fcitx.vim')
-
-" Colorscheme
-call dein#add('altercation/vim-colors-solarized')
-call dein#add('w0ng/vim-hybrid')
-call dein#add('tomasr/molokai')
-call dein#add('sjl/badwolf')
-call dein#add('notpratheek/vim-luna')
-call dein#add('joshdick/onedark.vim')
-call dein#add('sickill/vim-monokai')
-call dein#add('junegunn/seoul256.vim')
-call dein#add('dracula/vim')
-call dein#add('jpo/vim-railscasts-theme')
-
-" Statusbar and tabline
-call dein#add('bling/vim-airline')
-call dein#add('vim-airline/vim-airline-themes')
-
-" Markdown
-call dein#add('plasticboy/vim-markdown')
-call dein#add('kannokanno/previm')
-call dein#add('tyru/open-browser.vim')
-
-" tags
-call dein#add('majutsushi/tagbar')
-" ctags assist. Type :TagsGenerate when update ctags
-call dein#add('szw/vim-tags')
-
-" Golang
-call dein#add('fatih/vim-go')
-
-" PHP
-call dein#add('nishigori/vim-php-dictionary', {'on_ft': 'php'})
-call dein#add('joonty/vdebug')
-
-" Python
-call dein#add('davidhalter/jedi-vim')
+  " vimprocだけは最初にインストールしてほしい
+  if dein#check_install(['vimproc'])
+      call dein#install(['vimproc'])
+  endif
 
 call dein#end()
 call dein#save_state()

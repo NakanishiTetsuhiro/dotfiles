@@ -1,0 +1,143 @@
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+if = '''! has('unix') || has('mac')'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'Konfekt/FastFold'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+# Type gcc when toggle comment out
+[[plugins]]
+repo = 'tomtom/tcomment_vim' 
+
+[[plugins]]
+repo = 'christoomey/vim-tmux-navigator'
+
+[[plugins]]
+repo = 'itmammoth/doorboy.vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'vim-scripts/fcitx.vim'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+
+# Colorscheme
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'sjl/badwolf'
+
+[[plugins]]
+repo = 'notpratheek/vim-luna'
+
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+
+[[plugins]]
+repo = 'sickill/vim-monokai'
+
+[[plugins]]
+repo = 'junegunn/seoul256.vim'
+
+[[plugins]]
+repo = 'dracula/vim'
+
+[[plugins]]
+repo = 'jpo/vim-railscasts-theme'
+
+
+# Statusbar and tabline
+[[plugins]]
+repo = 'bling/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+
+# Markdown
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+
+# tags
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+# ctags assist. Type :TagsGenerate when update ctags
+[[plugins]]
+repo = 'szw/vim-tags'
+
+
+# Golang
+[[plugins]]
+repo = 'fatih/vim-go'
+
+
+# PHP
+[[plugins]]
+repo = 'nishigori/vim-php-dictionary'
+on_ft = 'php'
+
+[[plugins]]
+repo = 'joonty/vdebug'
+
+
+# Python
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+on_ft = 'python'
