@@ -9,7 +9,7 @@ set visualbell t_vb=
 
 if OSTYPE == "Darwin\n"
     set guifont=Ricty\ Discord:h18
-fi
+endif
 
 " Key Mappings
 nnoremap <c-j> <c-w>j
