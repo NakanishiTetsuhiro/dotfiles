@@ -9,6 +9,8 @@ set visualbell t_vb=
 
 if OSTYPE == "Darwin\n"
     set guifont=Ricty\ Discord:h18
+elseif OSTYPE == "Linux\n"
+    set guifont=Ricty\ Discord:h18
 endif
 
 " Key Mappings
