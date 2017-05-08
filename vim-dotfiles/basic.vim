@@ -4,9 +4,9 @@ set fileformats=unix,dos,mac
 set number
 set hls
 set incsearch
-set expandtab " If type <tab> when use Control-v <Tab>
+" set expandtab " If type <tab> when use Control-v <Tab>
 set autoindent
-set tabstop=4
+set tabstop=4 " ファイル中の<Tab>文字(キャラクターコード9)を、画面上の見た目で何文字分に展開するかを指定する
 set shiftwidth=4
 set softtabstop=4
 set backspace=indent,eol,start
@@ -18,8 +18,9 @@ set hidden " :bコマンドでbufferを切り替える時に編集中ファイ�
 
 " set clipboard=unnamed,autoselect
 
+
 "---------------------------
-" for Mac and Linux settings
+" Settings by OS
 "---------------------------
 let OSTYPE = system('uname')
 
@@ -58,3 +59,9 @@ set t_ut=
 "---------------------------
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
+
+
+"---------------------------
+" 保存時に行末の空白を削除
+"---------------------------
+autocmd BufWritePre * :%s/\s\+$//ge
