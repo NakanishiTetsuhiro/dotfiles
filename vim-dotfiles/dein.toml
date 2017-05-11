@@ -32,13 +32,10 @@ repo = 'mattn/emmet-vim'
 
 # Type gcc when toggle comment out
 [[plugins]]
-repo = 'tomtom/tcomment_vim' 
+repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
 repo = 'christoomey/vim-tmux-navigator'
-
-[[plugins]]
-repo = 'itmammoth/doorboy.vim'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
