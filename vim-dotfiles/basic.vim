@@ -4,7 +4,7 @@ set fileformats=unix,dos,mac
 set number
 set hls
 set incsearch
-" set expandtab " If type <tab> when use Control-v <Tab>
+set expandtab " If type <tab> when use Control-v <Tab>
 set autoindent
 set tabstop=4 " ファイル中の<Tab>文字(キャラクターコード9)を、画面上の見た目で何文字分に展開するかを指定する
 set shiftwidth=4
@@ -15,8 +15,8 @@ set wildmode=list,full
 set ignorecase
 set laststatus=2
 set hidden " :bコマンドでbufferを切り替える時に編集中ファイルを保存しなくても良くなる機能
-
-" set clipboard=unnamed,autoselect
+set list
+set listchars=tab:»-,trail:･,nbsp:.,eol:↲
 
 
 "---------------------------
