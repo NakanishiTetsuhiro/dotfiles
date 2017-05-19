@@ -93,8 +93,7 @@ bindkey -e '^Z' fancy-ctrl-z # Use -e: Enable emacs-mode
 #-------------------------
 # Golang
 #-------------------------
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 
 
 #-------------------------
