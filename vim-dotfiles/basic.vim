@@ -17,7 +17,7 @@ set laststatus=2
 set hidden " :bコマンドでbufferを切り替える時に編集中ファイルを保存しなくても良くなる機能
 set list
 set listchars=tab:»-,trail:･,nbsp:.,eol:↲
-
+set nobackup
 
 "---------------------------
 " Settings by OS
@@ -39,7 +39,6 @@ endif
 "---------------------------
 " Colorscheme
 "---------------------------
-" set background=dark
 " colorscheme hybrid
 " colorscheme railscasts
 " colorscheme badwolf
