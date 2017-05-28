@@ -23,12 +23,12 @@ alias l='ls -l'
 alias g=git
 
 
-case ${OSTYPE} in 
+case ${OSTYPE} in
     # Settings for OSX
-    darwin*) 
+    darwin*)
         alias ls='ls -G'
         alias sed='gsed'
-    
+
         export LC_ALL='ja_JP.UTF-8' # http://please-sleep.cou929.nu/python-locale-valueerror-utf-8.html
 
         dict() { open dict://$1; }  # Dictionary config
@@ -97,17 +97,6 @@ export PATH=$PATH:/usr/local/go/bin
 
 
 #-------------------------
-# pyenv
-#-------------------------
-export PYENV_ROOT="$HOME/.pyenv"
-if [ -d "${PYENV_ROOT}" ]; then
-  export PATH=${PYENV_ROOT}/bin:$PATH
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
-
-#-------------------------
 # rbenv
 #-------------------------
 export RBENV_ROOT="$HOME/.rbenv"
@@ -122,6 +111,16 @@ fi
 #-------------------------
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
+
+#-------------------------
+# pyenv
+#-------------------------
+export PYENV_ROOT="$HOME/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+  export PATH=${PYENV_ROOT}/bin:$PATH
+  eval "$(pyenv init -)"
+  # eval "$(pyenv virtualenv-init -)"
+fi
 
 #-------------------------
 # Docker
