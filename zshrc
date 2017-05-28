@@ -122,3 +122,9 @@ fi
 #-------------------------
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
+
+#-------------------------
+# Docker
+#-------------------------
+alias drma='docker rm -v $(docker ps -aq -f status=exited)'
+alias drmaf='docker rm -f -v $(docker ps -aq -f status=exited)'
