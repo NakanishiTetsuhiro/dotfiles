@@ -19,6 +19,7 @@ set list
 set listchars=tab:»-,trail:･,nbsp:.,eol:↲
 set nobackup
 
+
 "---------------------------
 " Settings by OS
 "---------------------------
@@ -64,3 +65,9 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 " 保存時に行末の空白を削除
 "---------------------------
 autocmd BufWritePre * :%s/\s\+$//ge
+
+
+"---------------------------
+" tagsジャンプの時に複数ある時は一覧表示
+"---------------------------
+nnoremap <C-]> g<C-]>
