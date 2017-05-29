@@ -3,6 +3,10 @@
 " Github: https://github.com/NakanishiTetsuhiro/dotfiles
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+"---------------------------
+" Dein settings
+"---------------------------
 if &compatible
   set nocompatible
 endif
@@ -52,7 +56,9 @@ endif
 filetype plugin indent on
 
 
-" Other Settings
+"---------------------------
+" Include setting files
+"---------------------------
 source $HOME/dotfiles/vim-dotfiles/basic.vim
 source $HOME/dotfiles/vim-dotfiles/key-mappings.vim
 source $HOME/dotfiles/vim-dotfiles/plugin_settings.vim
