@@ -19,7 +19,8 @@ fi
 #-------------------------
 setopt noclobber
 
-alias l='ls -l'
+alias l='ls -ltr'
+alias la='ls -ltra'
 alias g=git
 
 
