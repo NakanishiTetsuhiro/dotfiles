@@ -10,13 +10,13 @@ deploy() {
         die "not found: $DOTPATH"
     fi
 
-    ln -svi "$DOTPATH/zshrc" $HOME/.zshrc
-    ln -svi "$DOTPATH/bashrc" $HOME/.bashrc
-    ln -svi "$DOTPATH/tigrc" $HOME/.tigrc
-    ln -svi "$DOTPATH/tmux.conf" $HOME/.tmux.conf
-    ln -svi "$DOTPATH/ctags" $HOME/.ctags
-    ln -svi "$DOTPATH/vim-dotfiles/vimrc" $HOME/.vimrc
-    ln -svi "$DOTPATH/vim-dotfiles/gvimrc" $HOME/.gvimrc
+    ln -svi "$DOTPATH/.zshrc" $HOME/.zshrc
+    ln -svi "$DOTPATH/.bashrc" $HOME/.bashrc
+    ln -svi "$DOTPATH/.tigrc" $HOME/.tigrc
+    ln -svi "$DOTPATH/.tmux.conf" $HOME/.tmux.conf
+    ln -svi "$DOTPATH/.ctags" $HOME/.ctags
+    ln -svi "$DOTPATH/.vimrc" $HOME/.vimrc
+    ln -svi "$DOTPATH/.gvimrc" $HOME/.gvimrc
 }
 
 deploy

@@ -19,6 +19,8 @@ fi
 #-------------------------
 setopt noclobber
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 alias l='ls -ltr'
 alias la='ls -ltra'
 alias g=git
