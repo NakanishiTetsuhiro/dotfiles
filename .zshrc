@@ -19,16 +19,19 @@ fi
 #-------------------------
 setopt noclobber
 
-alias l='ls -l'
+export XDG_CONFIG_HOME="$HOME/.config"
+
+alias l='ls -ltr'
+alias la='ls -ltra'
 alias g=git
 
 
-case ${OSTYPE} in 
+case ${OSTYPE} in
     # Settings for OSX
-    darwin*) 
+    darwin*)
         alias ls='ls -G'
         alias sed='gsed'
-    
+
         export LC_ALL='ja_JP.UTF-8' # http://please-sleep.cou929.nu/python-locale-valueerror-utf-8.html
 
         alias vim='env_LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
@@ -126,3 +129,8 @@ if [ -d "${PYENV_ROOT}" ]; then
   # eval "$(pyenv virtualenv-init -)"
 fi
 
+#-------------------------
+# Docker
+#-------------------------
+alias drma='docker rm -v $(docker ps -aq -f status=exited)'
+alias drmaf='docker rm -f -v $(docker ps -aq -f status=exited)'

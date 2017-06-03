@@ -3,6 +3,10 @@
 " Github: https://github.com/NakanishiTetsuhiro/dotfiles
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+"---------------------------
+" Dein settings
+"---------------------------
 if &compatible
   set nocompatible
 endif
@@ -28,7 +32,7 @@ call dein#begin(s:dein_dir)
 
   " プラグインリストを収めた TOML ファイル
   " 予め TOML ファイル（後述）を用意しておく
-  let g:rc_dir    = expand('$HOME/dotfiles/vim-dotfiles')
+  let g:rc_dir    = expand('$HOME/dotfiles')
   let s:toml      = g:rc_dir . '/dein.toml'
   " let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
@@ -52,9 +56,11 @@ endif
 filetype plugin indent on
 
 
-" Other Settings
-source $HOME/dotfiles/vim-dotfiles/basic.vim
-source $HOME/dotfiles/vim-dotfiles/key-mappings.vim
-source $HOME/dotfiles/vim-dotfiles/plugin_settings.vim
-source $HOME/dotfiles/vim-dotfiles/other_settings.vim
+"---------------------------
+" Include setting files
+"---------------------------
+source $HOME/dotfiles/.vimrc.basic
+source $HOME/dotfiles/.vimrc.keymap
+source $HOME/dotfiles/.vimrc.plugin
+source $HOME/dotfiles/.vimrc.other
 
