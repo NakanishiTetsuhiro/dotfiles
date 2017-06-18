@@ -18,7 +18,7 @@ set hidden " :bコマンドでbufferを切り替える時に編集中ファイ�
 set list
 set listchars=tab:»-,trail:･,nbsp:.,eol:↲
 set nobackup
-
+set noundofile
 
 "---------------------------
 " Settings by OS
