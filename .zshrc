@@ -106,8 +106,8 @@ export PATH=$PATH:/usr/local/go/bin
 #-------------------------
 # rbenv
 #-------------------------
-export RBENV_ROOT="$HOME/.rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
+  export RBENV_ROOT="$HOME/.rbenv"
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 fi
