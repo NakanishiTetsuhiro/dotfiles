@@ -12,12 +12,14 @@ deploy() {
     fi
 
     ln -svi "$DOTPATH/config.fish" $HOME/.config/fish/config.fish
-    ln -svi "$DOTPATH/.zshrc" $HOME/.zshrc
-    ln -svi "$DOTPATH/.bashrc" $HOME/.bashrc
+    # ln -svi "$DOTPATH/.zshrc" $HOME/.zshrc
+    # ln -svi "$DOTPATH/.bashrc" $HOME/.bashrc
     ln -svi "$DOTPATH/.tigrc" $HOME/.tigrc
     ln -svi "$DOTPATH/.tmux.conf" $HOME/.tmux.conf
     ln -svi "$DOTPATH/.ctags" $HOME/.ctags
     ln -svi "$DOTPATH/.vimrc" $HOME/.vimrc
+    ln -svi "$DOTPATH/.vim/filetype.vim" $HOME/.vim/filetype.vim
+    ln -svi "$DOTPATH/.vim/ftplugin" $HOME/.vim/ftplugin
     ln -svi "$DOTPATH/.gvimrc" $HOME/.gvimrc
 }
 
