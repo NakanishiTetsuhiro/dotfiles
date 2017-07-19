@@ -260,3 +260,10 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_php_checkers = ['phpcs']
 " let g:syntastic_php_phpcs_args='--standard=psr2'
+
+
+"---------------------------
+" NERDtree
+"---------------------------
+" map <C-n> :NERDTreeToggle<CR>
+map <Leader>e :NERDTreeToggle<CR>
