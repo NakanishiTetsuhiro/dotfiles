@@ -14,6 +14,26 @@ repo = 'Shougo/vimfiler'
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
+
+# [[plugins]]
+# repo = 'eshion/vim-sync'
+
+# [[plugins]]
+# repo = 'vimplugin/project.vim'
 
 ####################
 # Statusbar and tabline
@@ -52,9 +72,6 @@ repo = 'vim-airline/vim-airline-themes'
 # repo = 'christoomey/vim-tmux-navigator'
 
 # [[plugins]]
-# repo = 'tpope/vim-surround'
-
-# [[plugins]]
 # repo = 'junegunn/vim-easy-align'
 
 # [[plugins]]
@@ -81,6 +98,12 @@ repo = 'vim-airline/vim-airline-themes'
 ####################
 [[plugins]]
 repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'chriskempson/base16-vim'
+
+[[plugins]]
+repo = 'chriskempson/tomorrow-theme/vim'
 
 # [[plugins]]
 # repo = 'altercation/vim-colors-solarized'
