@@ -12,6 +12,7 @@ alias v=vim
 alias g=git
 alias ch=checkout
 alias co=commit
+alias rm='rm -i'
 
 
 #-------------------------
@@ -29,7 +30,7 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey -e '^Z' fancy-ctrl-z # Use -e: Enable emacs-mode
 
-case ${OSTYPE} in 
+case ${OSTYPE} in
   darwin*)                      # Settings for OSX
     alias ls='ls -G'
     alias sed='gsed'
