@@ -1,5 +1,5 @@
 #-------------------------
-# Basic settings
+# Basic
 #-------------------------
 set -x XDG_CONFIG_HOME $HOME/.config
 
@@ -14,7 +14,7 @@ case Linux
 case Darwin
     alias ls='ls -G'
     alias sed='gsed'
-    set -x LC_ALL='ja_JP.UTF-8' # http://please-sleep.cou929.nu/python-locale-valueerror-utf-8.html
+    # set -x LC_ALL='ja_JP.UTF-8' # http://please-sleep.cou929.nu/python-locale-valueerror-utf-8.html
 
 end
 
@@ -23,3 +23,9 @@ end
 # Golang
 #-------------------------
 set -x GOPATH $HOME/Documents/Go
+
+
+#-------------------------
+# Docker
+#-------------------------
+alias drma='docker rm (docker ps -aq)'
