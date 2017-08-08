@@ -103,7 +103,7 @@ repo = 'tomasr/molokai'
 repo = 'chriskempson/base16-vim'
 
 [[plugins]]
-repo = 'chriskempson/tomorrow-theme/vim'
+repo = 'chriskempson/vim-tomorrow-theme'
 
 # [[plugins]]
 # repo = 'altercation/vim-colors-solarized'
