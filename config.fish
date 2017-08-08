@@ -6,6 +6,9 @@ set -x XDG_CONFIG_HOME $HOME/.config
 alias l='ls -ltr'
 alias la='ls -ltra'
 alias g=git
+alias ch=checkout
+alias co=commit
+alias rm='rm -i'
 
 switch (uname)
 case Linux
