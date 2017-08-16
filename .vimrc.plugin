@@ -1,30 +1,4 @@
 "---------------------------
-" unite.vim
-"---------------------------
-" The prefix key.
-nnoremap    [unite]   <Nop>
-nmap    <Leader>f [unite]
-
-" unite.vim keymap
-" https://github.com/alwei/dotfiles/blob/3760650625663f3b08f24bc75762ec843ca7e112/.vimrc
-" nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
-nnoremap <silent> [unite]f :VimFiler<CR>
-nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
-
-
-
-"---------------------------
-" VimFiler
-"---------------------------
-" vim 標準のファイラを置き換える
-let g:vimfiler_as_default_explorer = 1
-" デフォルトだと Enter でディレクトリに入ってしまって好みと合わないので、Enter は単にツリーを開くだけにした。h と l で "親ディレクトリに移動" と "子ディレクトリに移動" がデフォルトでできて対称性あるので、こっちの設定のが好み
-autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
-" C-X C-T で IDE みたいなファイルツリーを開く。width の値を適当に変えると大きさが変わる
-noremap <Leader>vf :VimFiler -split -simple -winwidth=28 -no-quit<CR>
-
-
-"---------------------------
 " TmuxNavigate
 "---------------------------
 " let g:tmux_navigator_no_mappings = 1
@@ -33,82 +7,6 @@ noremap <Leader>vf :VimFiler -split -simple -winwidth=28 -no-quit<CR>
 " nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 " nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-
-
-"---------------------------
-" NeoComplete
-"---------------------------
-" " Disable AutoComplPop.
-" let g:acp_enableAtStartup = 0
-" " Use neocomplete.
-" let g:neocomplete#enable_at_startup = 1
-" " Use smartcase. " 大文字が入力されるまで大文字小文字の区別を無視する
-" let g:neocomplete#enable_smart_case = 1
-" " Set minimum syntax keyword length.
-" let g:neocomplete#sources#syntax#min_keyword_length = 3
-" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-"
-" " Define dictionary.
-" let g:neocomplete#sources#dictionary#dictionaries = {
-"     \ 'default' : '',
-"     \ 'vimshell' : $HOME.'/.vimshell_hist',
-"     \ 'scheme' : $HOME.'/.gosh_completions',
-"     \ 'php' : $HOME.'/.cache/dein/repos/github.com/nishigori/vim-php-dictionary/dict/PHP.dict'
-"         \ }
-"
-" " Define keyword.
-" if !exists('g:neocomplete#keyword_patterns')
-"     let g:neocomplete#keyword_patterns = {}
-" endif
-" let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-"
-" " Plugin key-mappings.
-" inoremap <expr><C-g>     neocomplete#undo_completion()
-" inoremap <expr><C-l>     neocomplete#complete_common_string()
-"
-" " Recommended key-mappings.
-" " <CR>: close popup and save indent.
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-" function! s:my_cr_function()
-"   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-"   " For no inserting <CR> key.
-"   "return pumvisible() ? "\<C-y>" : "\<CR>"
-" endfunction
-" " <TAB>: completion.
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" " <C-h>, <BS>: close popup and delete backword char.
-" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" " Close popup by <Space>.
-" "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
-"
-" " AutoComplPop like behavior.
-" "let g:neocomplete#enable_auto_select = 1
-"
-" " Shell like behavior(not recommended).
-" "set completeopt+=longest
-" "let g:neocomplete#enable_auto_select = 1
-" "let g:neocomplete#disable_auto_complete = 1
-" "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-"
-" " Enable omni completion.
-" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"
-" " Enable heavy omni completion.
-" if !exists('g:neocomplete#sources#omni#input_patterns')
-"   let g:neocomplete#sources#omni#input_patterns = {}
-" endif
-" "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-" "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-" "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-"
-" " For perlomni.vim setting.
-" " https://github.com/c9s/perlomni.vim
-" let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
 "---------------------------
@@ -182,30 +80,6 @@ let g:user_emmet_expandabbr_key = '<C-e>'
 
 
 "---------------------------
-" Neosnippet
-"---------------------------
-" " Plugin key-mappings.
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
-"
-" " SuperTab like snippets behavior.
-" "imap <expr><TAB>
-" " \ pumvisible() ? "\<C-n>" :
-" " \ neosnippet#expandable_or_jumpable() ?
-" " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-"
-" " For conceal markers. conceallevel(0,1,2)でマーカーの表示非表示を制御できる
-" if has('conceal')
-"   set conceallevel=0 concealcursor=niv
-" endif
-" " My Snippets location
-" let g:neosnippet#snippets_directory='~/dotfiles/vim-dotfiles/my-snippets/'
-
-
-"---------------------------
 " vim-easy-align
 "---------------------------
 " " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -261,9 +135,3 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:syntastic_php_checkers = ['phpcs']
 " let g:syntastic_php_phpcs_args='--standard=psr2'
 
-
-"---------------------------
-" NERDtree
-"---------------------------
-" map <C-n> :NERDTreeToggle<CR>
-map <Leader>e :NERDTreeToggle<CR>
