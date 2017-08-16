@@ -135,3 +135,9 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:syntastic_php_checkers = ['phpcs']
 " let g:syntastic_php_phpcs_args='--standard=psr2'
 
+
+"---------------------------
+" Vaffle
+"---------------------------
+map <Leader>e :Vaffle<CR>
+
