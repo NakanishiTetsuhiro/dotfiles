@@ -29,8 +29,10 @@ repo = 'terryma/vim-multiple-cursors'
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
 
+[[plugins]]
+repo = 'cocopon/vaffle.vim'
 # [[plugins]]
-# repo = 'eshion/vim-sync'
+# repo = 'justinmk/vim-dirvish'
 
 # [[plugins]]
 # repo = 'vimplugin/project.vim'
