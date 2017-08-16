@@ -5,23 +5,11 @@ repo = 'mattn/emmet-vim'
 repo = 'tomtom/tcomment_vim' # Type gcc when toggle comment out
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
-repo = 'Shougo/vimfiler'
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
 
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
@@ -34,8 +22,8 @@ repo = 'cocopon/vaffle.vim'
 # [[plugins]]
 # repo = 'justinmk/vim-dirvish'
 
-# [[plugins]]
-# repo = 'vimplugin/project.vim'
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
 
 ####################
 # Statusbar and tabline
@@ -45,54 +33,6 @@ repo = 'bling/vim-airline'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-
-
-# [[plugins]]
-# repo = 'ujihisa/unite-colorscheme'
-
-# [[plugins]]
-# repo = 'Shougo/neocomplete.vim'
-
-# [[plugins]]
-# repo = 'Shougo/neosnippet.vim'
-
-# [[plugins]]
-# repo = 'Shougo/neosnippet-snippets'
-
-# [[plugins]]
-# repo = 'Shougo/vimproc.vim'
-# build = 'make'
-# if = '''! has('unix') || has('mac')'''
-
-# [[plugins]]
-# repo = 'tpope/vim-fugitive'
-
-# [[plugins]]
-# repo = 'Konfekt/FastFold'
-
-# [[plugins]]
-# repo = 'christoomey/vim-tmux-navigator'
-
-# [[plugins]]
-# repo = 'junegunn/vim-easy-align'
-
-# [[plugins]]
-# repo = 'thinca/vim-ref'
-
-# [[plugins]]
-# repo = 'thinca/vim-quickrun'
-
-# [[plugins]]
-# repo = 'vim-scripts/fcitx.vim'
-
-# [[plugins]]
-# repo = 'vim-syntastic/syntastic'
-
-# [[plugins]]
-# repo = 'majutsushi/tagbar'
-
-# [[plugins]]
-# repo = 'szw/vim-tags' # ctags assist. Type :TagsGenerate when update ctags
 
 
 ####################
