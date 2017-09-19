@@ -3,55 +3,40 @@
 " Github: https://github.com/NakanishiTetsuhiro/dotfiles
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-"---------------------------
-" Dein settings
-"---------------------------
-if &compatible
-  set nocompatible
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 
-" deinパス設定
-let s:dein_dir = fnamemodify('~/.vim/dein/', ':p') "<-お好きな場所
-let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim' "<-固定
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" dein.vim本体の存在チェックとインストール
-if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' shellescape(s:dein_repo_dir)
-endif
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
 
-" dein.vim本体をランタイムパスに追加
-if &runtimepath !~# '/dein.vim'
-    execute 'set runtimepath^=' . s:dein_repo_dir
-endif
+Plug 'mattn/emmet-vim'
+Plug 'tomtom/tcomment_vim' " Type gcc when toggle comment out
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'cocopon/vaffle.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
+" Statusbar and tabline
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" Dein setting start
-call dein#begin(s:dein_dir)
+" Colorscheme
+Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/vim-tomorrow-theme'
 
-  " プラグインリストを収めた TOML ファイル
-  " 予め TOML ファイル（後述）を用意しておく
-  let g:rc_dir    = expand('$HOME/dotfiles')
-  let s:toml      = g:rc_dir . '/dein.toml'
-  " let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-
-  " TOML を読み込み、キャッシュしておく
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  " call dein#load_toml(s:lazy_toml, {'lazy': 1})
-
-  " vimprocだけは最初にインストールしてほしい
-  if dein#check_install(['vimproc'])
-      call dein#install(['vimproc'])
-  endif
-
-call dein#end()
-call dein#save_state()
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+" Initialize plugin system
+call plug#end()
 
 filetype plugin indent on
 
