@@ -11,24 +11,10 @@ if &compatible
   set nocompatible
 endif
 
-
-" deinパス設定
-let s:dein_dir = fnamemodify('~/.vim/dein/', ':p') "<-お好きな場所
-let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim' "<-固定
-
-" dein.vim本体の存在チェックとインストール
-if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' shellescape(s:dein_repo_dir)
-endif
-
-" dein.vim本体をランタイムパスに追加
-if &runtimepath !~# '/dein.vim'
-    execute 'set runtimepath^=' . s:dein_repo_dir
-endif
-
+set runtimepath+='$HOME/.vim/dein/repos/github.com/Shougo/dein.vim'
 
 " Dein setting start
-call dein#begin(s:dein_dir)
+call dein#begin('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " プラグインリストを収めた TOML ファイル
   " 予め TOML ファイル（後述）を用意しておく
