@@ -9,6 +9,7 @@ alias g=git
 alias ch=checkout
 alias co=commit
 alias rm='rm -i'
+alias up='cd ../'
 
 switch (uname)
 case Linux
@@ -32,3 +33,4 @@ set -x GOPATH $HOME/Documents/Go
 # Docker
 #-------------------------
 alias drma='docker rm (docker ps -aq)'
+
