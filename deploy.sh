@@ -11,7 +11,8 @@ deploy() {
         die "not found: $DOTPATH"
     fi
 
-    ln -svi "$DOTPATH/config.fish" $HOME/.config/fish/config.fish
+    # シンボリックリンクだとUbuntuでうまく認識されないのでハードリンクにしてる
+    ln "$DOTPATH/.config/fish/config.fish" $HOME/.config/fish/config.fish
     # ln -svi "$DOTPATH/.zshrc" $HOME/.zshrc
     # ln -svi "$DOTPATH/.bashrc" $HOME/.bashrc
     ln -svi "$DOTPATH/.tigrc" $HOME/.tigrc
