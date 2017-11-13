@@ -19,6 +19,7 @@ set list
 set listchars=tab:»-,trail:･,nbsp:.,eol:↲
 set nobackup
 set noundofile
+set shell=/bin/bash
 
 "---------------------------
 " Settings by OS
