@@ -19,8 +19,8 @@ end
 #-------------------------
 set -x XDG_CONFIG_HOME $HOME/.config
 
-alias l='ls -ltr'
-alias la='ls -ltra'
+alias l='ls -l'
+alias la='ls -la'
 alias g=git
 alias ch=checkout
 alias co=commit
@@ -38,15 +38,17 @@ case Darwin
 
 end
 
-
 #-------------------------
 # Golang
 #-------------------------
 set -x GOPATH $HOME/Documents/Go
-
 
 #-------------------------
 # Docker
 #-------------------------
 alias drma='docker rm (docker ps -aq)'
 
+#-------------------------
+# Laravel
+#-------------------------
+set -x PATH $HOME/.config/composer/vendor/bin $PATH
