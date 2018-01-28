@@ -47,6 +47,7 @@ set -x GOPATH $HOME/Documents/Go
 # Docker
 #-------------------------
 alias drma='docker rm (docker ps -aq)'
+alias dsa='docker stop (docker ps -a -q)'
 
 #-------------------------
 # Laravel
