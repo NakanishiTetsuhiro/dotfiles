@@ -1,0 +1,53 @@
+- hosts: localhost
+  connection: local
+  tasks:
+      - name: Create fish hardlink
+        file:
+          src: ~/dotfiles/src/fish/config.fish
+          dest: ~/.config/fish/config.fish
+          state: hard
+          force: no
+
+      - name: Create fish functions symlink
+        file:
+          src: ~/dotfiles/src/fish/functions
+          dest: ~/.config/fish/functions
+          state: link
+          force: no
+
+      - name: Create symlinks1
+        file:
+          src: ~/dotfiles/src/{{ item }}/.{{ item }}rc
+          dest: ~/.{{ item }}rc
+          state: link
+          force: no
+        with_items:
+          - bash
+          - zsh
+          - tig
+
+      - name: Create tmux symlink
+        file:
+          src: ~/dotfiles/src/tmux/.tmux.conf
+          dest: ~/.tmux.conf
+          state: link
+          force: no
+
+      - name: Create ctags symlink
+        file:
+          src: ~/dotfiles/src/ctags/.ctags
+          dest: ~/.ctags
+          state: link
+          force: no
+
+      - name: Create vim symlink
+        file:
+          src: ~/dotfiles/src/vim/.vim
+          dest: ~/.vim
+          state: link
+          force: no
+        file:
+          src: ~/dotfiles/src/vim/.vimrc
+          dest: ~/.vimrc
+          state: link
+          force: no
