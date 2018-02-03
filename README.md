@@ -3,7 +3,8 @@
 ## Installation
 
     git clone https://github.com/NakanishiTetsuhiro/dotfiles $HOME/dotfiles
-    $HOME/dotfiles/deploy.sh
+    ansible-playbook $HOME/dotfiles/deploy.yml
+    omf theme default
 
 ## Blog
 

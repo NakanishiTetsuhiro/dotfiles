@@ -43,8 +43,8 @@ filetype plugin indent on
 "---------------------------
 " Include setting files
 "---------------------------
-source $HOME/dotfiles/.vimrc.basic
-source $HOME/dotfiles/.vimrc.keymap
-source $HOME/dotfiles/.vimrc.plugin
-source $HOME/dotfiles/.vimrc.other
+source $HOME/dotfiles/src/vim/.vimrc.basic
+source $HOME/dotfiles/src/vim/.vimrc.keymap
+source $HOME/dotfiles/src/vim/.vimrc.plugin
+source $HOME/dotfiles/src/vim/.vimrc.other
 

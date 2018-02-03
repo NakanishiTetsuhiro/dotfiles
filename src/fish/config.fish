@@ -10,9 +10,7 @@ set -q XDG_DATA_HOME
 source $OMF_PATH/init.fish
 
 # set fish_theme agnoster
-function fish_user_key_bindings
-  bind \cr 'peco_select_history (commandline -b)'
-end
+set fish_theme default
 
 #-------------------------
 # Basic
