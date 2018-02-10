@@ -1,19 +1,8 @@
 - hosts: localhost
   connection: local
   tasks:
-      - name: Create fish hardlink
-        file:
-          src: ~/dotfiles/src/fish/config.fish
-          dest: ~/.config/fish/config.fish
-          state: hard
-          force: no
-
-      - name: Create fish functions symlink
-        file:
-          src: ~/dotfiles/src/fish/functions
-          dest: ~/.config/fish/functions
-          state: link
-          force: no
+      - name: Copy config.fish
+        synchronize: src=~/dotfiles/src/fish/config.fish dest=~/.config/fish/functions
 
       - name: Create symlinks1
         file:
