@@ -29,14 +29,9 @@
           state: link
           force: no
 
-      - name: Create vim symlink
-        file:
-          src: ~/dotfiles/src/vim/.vim
-          dest: ~/.vim
-          state: link
-          force: no
+      - name: Create vimrc symlink
         file:
           src: ~/dotfiles/src/vim/.vimrc
           dest: ~/.vimrc
           state: link
-          force: no
+          force: yes
