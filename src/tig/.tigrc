@@ -3,3 +3,5 @@ set main-view      = id date author commit-title:graph=yes,refs=yes
 
 set vertical-split = horizontal
 
+# Untracked filesが表示されないバグを回避できるらしい
+set status-show-untracked-files = yes
