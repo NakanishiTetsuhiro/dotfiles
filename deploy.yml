@@ -2,7 +2,7 @@
   connection: local
   tasks:
       - name: Copy config.fish
-        synchronize: src=~/dotfiles/src/fish/config.fish dest=~/.config/fish/functions
+        synchronize: src=~/dotfiles/src/fish/config.fish dest=~/.config/fish/config.fish
 
       - name: Create symlinks1
         file:
