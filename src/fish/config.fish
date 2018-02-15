@@ -50,9 +50,13 @@ alias dsa='docker stop (docker ps -a -q)'
 #-------------------------
 # Laravel
 #-------------------------
-set -x PATH $HOME/.config/composer/vendor/bin $PATH
+if test -e $HOME/.config/composer/vendor/bin
+    set -x PATH $HOME/.config/composer/vendor/bin $PATH
+end
 
 #-------------------------
 # adb command from Android studio
 #-------------------------
-set PATH  $HOME/Library/Android/sdk/platform-tools $PATH
+if test -e $HOME/Library/Android/sdk/platform-tools
+    set PATH $HOME/Library/Android/sdk/platform-tools $PATH
+end
