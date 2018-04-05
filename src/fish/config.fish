@@ -45,7 +45,7 @@ alias drma='docker rm (docker ps -aq)'
 alias dsa='docker stop (docker ps -a -q)'
 
 #-------------------------
-# Laravel
+# Composer
 #-------------------------
 if test -e $HOME/.config/composer/vendor/bin
     set -x PATH $HOME/.config/composer/vendor/bin $PATH
@@ -57,3 +57,4 @@ end
 if test -e $HOME/Library/Android/sdk/platform-tools
     set PATH $HOME/Library/Android/sdk/platform-tools $PATH
 end
+
