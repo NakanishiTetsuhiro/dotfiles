@@ -58,3 +58,7 @@ if test -e $HOME/Library/Android/sdk/platform-tools
     set PATH $HOME/Library/Android/sdk/platform-tools $PATH
 end
 
+#-------------------------
+# rbenv
+#-------------------------
+rbenv init - | source
