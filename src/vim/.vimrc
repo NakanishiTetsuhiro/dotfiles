@@ -46,6 +46,13 @@ filetype plugin indent on
 source $HOME/dotfiles/src/vim/.vimrc.basic
 source $HOME/dotfiles/src/vim/.vimrc.keymap
 source $HOME/dotfiles/src/vim/.vimrc.plugin
-source $HOME/dotfiles/src/vim/.vimrc.ftplugin
 source $HOME/dotfiles/src/vim/.vimrc.other
 
+"---------------------------
+" Indent settings
+"---------------------------
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
