@@ -46,5 +46,6 @@ filetype plugin indent on
 source $HOME/dotfiles/src/vim/.vimrc.basic
 source $HOME/dotfiles/src/vim/.vimrc.keymap
 source $HOME/dotfiles/src/vim/.vimrc.plugin
+source $HOME/dotfiles/src/vim/.vimrc.ftplugin
 source $HOME/dotfiles/src/vim/.vimrc.other
 

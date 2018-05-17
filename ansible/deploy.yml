@@ -4,6 +4,9 @@
       - name: Copy config.fish
         synchronize: src=~/dotfiles/src/fish/config.fish dest=~/.config/fish/config.fish
 
+      - name: Copy ftplugin directory
+        synchronize: src=~/dotfiles/src/vim/ftplugin dest=~/.vim/ftplugin
+
       - name: Create symlinks1
         file:
           src: ~/dotfiles/src/{{ item }}/.{{ item }}rc
