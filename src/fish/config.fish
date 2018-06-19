@@ -62,3 +62,9 @@ end
 # rbenv
 #-------------------------
 rbenv init - | source
+
+#-------------------------
+# nodebrew
+#-------------------------
+set -x PATH $HOME/.nodebrew/current/bin $PATH
+
