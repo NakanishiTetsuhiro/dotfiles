@@ -20,6 +20,8 @@ fi
 setopt noclobber
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR='vim'
+export VISUAL='vim'
 
 alias l='ls -l'
 alias la='ls -la'
@@ -33,10 +35,6 @@ case ${OSTYPE} in
         alias sed='gsed'
 
         export LC_ALL='ja_JP.UTF-8' # http://please-sleep.cou929.nu/python-locale-valueerror-utf-8.html
-
-        alias vim='env_LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-        alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-        export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
         dict() { open dict://$1; }  # Dictionary config
     ;;
