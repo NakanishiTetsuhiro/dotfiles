@@ -56,15 +56,30 @@ esac
 
 
 #-------------------------
+# zsh common settings
+#-------------------------
+if [ -e ~/.zsh/completions ]; then
+  fpath=(~/.zsh/completions $fpath)
+fi
+autoload -Uz compinit && compinit -i
+
+#-------------------------
 # zshの補完機能強化
 #-------------------------
-fpath=(~/zsh-completions/src $fpath)
-autoload -U compinit; compinit
 HISTFILE=~/.zsh_history
 HISTSIZE=6000000
 SAVEHIST=6000000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
+
+# peco
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
 
 
 #-------------------------
@@ -94,27 +109,18 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey -e '^Z' fancy-ctrl-z # Use -e: Enable emacs-mode
 
-
 #-------------------------
-# Golang
+# exports
 #-------------------------
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
-
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$HOME/.config/composer/vendor/bin:$PATH
 
 #-------------------------
 # rbenv
 #-------------------------
-if [ -d "${RBENV_ROOT}" ]; then
-  export RBENV_ROOT="$HOME/.rbenv"
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-  eval "$(rbenv init -)"
-fi
-
-
-#-------------------------
-# phpbrew
-#-------------------------
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+eval "$(rbenv init -)"
 
 
 #-------------------------
@@ -122,3 +128,4 @@ fi
 #-------------------------
 alias drma='docker rm -v $(docker ps -aq -f status=exited)'
 alias drmaf='docker rm -f -v $(docker ps -aq -f status=exited)'
+
