@@ -122,10 +122,25 @@ export PATH=$HOME/.config/composer/vendor/bin:$PATH
 #-------------------------
 eval "$(rbenv init -)"
 
-
 #-------------------------
 # Docker
 #-------------------------
-alias drma='docker rm -v $(docker ps -aq -f status=exited)'
-alias drmaf='docker rm -f -v $(docker ps -aq -f status=exited)'
+alias dc='docker container'
+alias di='docker image'
+alias dv='docker volume'
+alias dcc='docker-compose'
 
+#-------------------------
+# Git
+#-------------------------
+alias gpl='git pull'
+alias gps='git push'
+alias gs='git status'
+alias gco='git commit'
+alias gch='git checkout'
+alias ga='git add'
+alias gf='git fetch'
+
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH";
+
+source ~/.phpbrew/bashrc
