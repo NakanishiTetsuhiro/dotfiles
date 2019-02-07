@@ -120,7 +120,9 @@ export PATH=$HOME/.config/composer/vendor/bin:$PATH
 #-------------------------
 # rbenv
 #-------------------------
-eval "$(rbenv init -)"
+if [[ -s "~/.phpbrew/bashrc" ]]; then
+  eval "$(rbenv init -)"
+fi
 
 #-------------------------
 # Docker
@@ -143,4 +145,6 @@ alias gf='git fetch'
 
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH";
 
-source ~/.phpbrew/bashrc
+if [[ -s "~/.phpbrew/bashrc" ]]; then
+  source ~/.phpbrew/bashrc
+fi
