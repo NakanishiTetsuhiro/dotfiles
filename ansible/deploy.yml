@@ -1,17 +1,17 @@
 - hosts: localhost
   connection: local
   tasks:
-      - name: Copy config.fish
-        synchronize: src=~/dotfiles/src/fish/config.fish dest=~/.config/fish/config.fish
+      # - name: Copy config.fish
+        # synchronize: src=~/dotfiles/src/fish/config.fish dest=~/.config/fish/config.fish
 
-      - name: Create symlinks1
+      - name: Create symlinks
         file:
           src: ~/dotfiles/src/{{ item }}/.{{ item }}rc
           dest: ~/.{{ item }}rc
           state: link
           force: no
         with_items:
-          - bash
+          # - bash
           - zsh
           - tig
 
@@ -22,12 +22,12 @@
           state: link
           force: no
 
-      - name: Create ctags symlink
-        file:
-          src: ~/dotfiles/src/ctags/.ctags
-          dest: ~/.ctags
-          state: link
-          force: no
+      # - name: Create ctags symlink
+      #   file:
+      #     src: ~/dotfiles/src/ctags/.ctags
+      #     dest: ~/.ctags
+      #     state: link
+      #     force: no
 
       - name: Create vimrc symlink
         file:
