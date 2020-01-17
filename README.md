@@ -1,22 +1,30 @@
 # Welcome to Nakanishi's dotfiles
 
+## Requirements
+
+- MacOS
+
 ## Preparing
 
 - 自分の設定ファイルがある人は、下記のファイルのバックアップをとってください
-    - ~/.bashrc
-    - ~/.zshrc
-    - ~/.tigrc
-    - ~/.tmux.conf
-    - ~/.ctags
-    - ~/.vimrc
+
+```
+cp ~/.bashrc ~/.bashrc.old
+cp ~/.zshrc ~/.zshrc.old
+cp ~/.tigrc ~/.tigrc.old
+cp ~/.tmux.conf ~/.tmux.conf.old
+cp ~/.ctags ~/.ctags.old
+cp ~/.vimrc ~/.vimrc.old
+```
 
 ## Installation
 
 ```
-brew install peco ansible zsh
+brew install peco ansible
+chsh -s /bin/zsh
 ```
 
-`/etc/shells`にzshのパス(`/usr/local/bin/zsh`)を追加
+ログアウトしてログイン
 
 ```
 git clone https://github.com/NakanishiTetsuhiro/dotfiles $HOME/dotfiles
