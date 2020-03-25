@@ -21,19 +21,15 @@ cp ~/.vimrc ~/.vimrc.old
 
 ```
 brew install peco ansible
-chsh -s /bin/zsh
-```
-
-ログアウトしてログイン
-
-```
 git clone https://github.com/NakanishiTetsuhiro/dotfiles $HOME/dotfiles
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 ansible-playbook $HOME/dotfiles/ansible/deploy.yml -i $HOME/dotfiles/ansible/hosts
 ```
 
 ## Dependencies
 
 - https://github.com/peco/peco
+- https://github.com/zplug/zplug
 
 ## Blog
 

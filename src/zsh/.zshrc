@@ -101,14 +101,6 @@ zle -N fancy-ctrl-z
 bindkey -e '^Z' fancy-ctrl-z # Use -e: Enable emacs-mode
 
 #-------------------------
-# exports
-#-------------------------
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin
-# export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PATH=$HOME/.config/composer/vendor/bin:$PATH
-
-#-------------------------
 # rbenv
 #-------------------------
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -138,6 +130,12 @@ alias gbr='git branch'
 # MySQL
 #-------------------------
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH";
+
+#-------------------------
+# Go
+#-------------------------
+export GOPATH=$HOME/go
+export PATH=$PATH:$HOME/go/bin
 
 #-------------------------
 # zshの補完機能強化
