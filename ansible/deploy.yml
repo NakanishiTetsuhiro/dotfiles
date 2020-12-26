@@ -35,3 +35,10 @@
           dest: ~/.vimrc
           state: link
           force: yes
+
+      - name: Create Brewfile symlink
+        file:
+          src: ~/dotfiles/src/homebrew/Brewfile
+          dest: ~/Brewfile
+          state: link
+          force: yes

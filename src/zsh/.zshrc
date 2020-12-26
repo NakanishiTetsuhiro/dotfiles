@@ -11,6 +11,8 @@
 source ~/.zplug/init.zsh
 # Syntax highlighting bundle. zsh-syntax-highlighting must be loaded after
 # excuting compinit command and sourcing other plugins.
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Install plugins if there are plugins that have not been installed
@@ -26,8 +28,8 @@ zplug load --verbose
 #-------------------------
 # pure
 #-------------------------
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 #-------------------------
 # Basic
