@@ -103,8 +103,11 @@ bindkey -e '^Z' fancy-ctrl-z # Use -e: Enable emacs-mode
 #-------------------------
 # rbenv
 #-------------------------
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d $HOME/.rbenv ]
+then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 #-------------------------
 # Docker
@@ -156,4 +159,15 @@ function peco-history-selection() {
 }
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
+
+#-------------------------
+# nodebrew
+#-------------------------
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+#-------------------------
+# ghq
+#-------------------------
+alias g='cd $(ghq root)/$(ghq list | peco)'
+alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
