@@ -121,17 +121,6 @@ setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
 #-------------------------
-# Integrate peco with history search
-#-------------------------
-function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
-}
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
-
-#-------------------------
 # nvm
 #-------------------------
 export NVM_DIR="$HOME/.nvm"
@@ -149,3 +138,14 @@ alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 #-------------------------
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 prompt pure
+
+#-------------------------
+# Integrate peco with history search
+#-------------------------
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
