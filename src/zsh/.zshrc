@@ -6,12 +6,6 @@
 ########################################################
 
 #-------------------------
-# pure
-#-------------------------
-# autoload -U promptinit; promptinit
-# prompt pure
-
-#-------------------------
 # Basic
 #-------------------------
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -153,3 +147,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
+#-------------------------
+# prezto
+#-------------------------
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"

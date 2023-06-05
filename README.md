@@ -19,16 +19,22 @@ cp ~/.vimrc ~/.vimrc.old
 
 ## Installation
 
+1. 下記コマンドを順番に実行してください
+
 ```
 brew install peco ansible
 git clone https://github.com/NakanishiTetsuhiro/dotfiles $HOME/dotfiles
 ansible-playbook $HOME/dotfiles/ansible/deploy.yml -i $HOME/dotfiles/ansible/hosts
 ```
 
+2. Preztoをインストールしてください
+
+https://github.com/sorin-ionescu/prezto#manual
+
 ## Dependencies
 
 - https://github.com/peco/peco
-- https://github.com/zplug/zplug
+- https://github.com/sorin-ionescu/prezto
 
 ## Blog
 
