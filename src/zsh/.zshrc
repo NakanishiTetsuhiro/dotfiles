@@ -106,11 +106,6 @@ alias gf='git fetch'
 alias gbr='git branch'
 
 #-------------------------
-# MySQL
-#-------------------------
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH";
-
-#-------------------------
 # Go
 #-------------------------
 export GOPATH=$HOME/go
