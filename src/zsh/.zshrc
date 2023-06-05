@@ -6,32 +6,6 @@
 ########################################################
 
 #-------------------------
-# zplug
-#-------------------------
-source ~/.zplug/init.zsh
-# Syntax highlighting bundle. zsh-syntax-highlighting must be loaded after
-# excuting compinit command and sourcing other plugins.
-zplug "mafredri/zsh-async"
-zplug "sindresorhus/pure"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-# Then, source plugins and add commands to $PATH
-zplug load --verbose
-
-#-------------------------
-# pure
-#-------------------------
-# autoload -U promptinit; promptinit
-# prompt pure
-
-#-------------------------
 # Basic
 #-------------------------
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -163,9 +137,11 @@ zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
 #-------------------------
-# nodebrew
+# nvm
 #-------------------------
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 #-------------------------
 # ghq
@@ -173,3 +149,8 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
+#-------------------------
+# prezto
+#-------------------------
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+prompt pure

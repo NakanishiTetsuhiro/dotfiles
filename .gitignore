@@ -3,3 +3,4 @@
 *.swp
 *.swo
 deploy.retry
+.idea
