@@ -22,7 +22,6 @@ cp ~/.vimrc ~/.vimrc.old
 ```
 brew install peco ansible
 git clone https://github.com/NakanishiTetsuhiro/dotfiles $HOME/dotfiles
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 ansible-playbook $HOME/dotfiles/ansible/deploy.yml -i $HOME/dotfiles/ansible/hosts
 ```
 
