@@ -153,3 +153,4 @@ alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 # prezto
 #-------------------------
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+prompt pure
