@@ -6,6 +6,12 @@
 ########################################################
 
 #-------------------------
+# prezto
+#-------------------------
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+prompt pure
+
+#-------------------------
 # Basic
 #-------------------------
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -14,7 +20,8 @@ export VISUAL='vim'
 
 alias l='ls -l'
 alias la='ls -la'
-alias g=git
+
+setopt NO_EXTENDED_GLOB
 
 case ${OSTYPE} in
     # Settings for OSX
@@ -123,21 +130,14 @@ setopt share_history        # share command history data
 #-------------------------
 # nvm
 #-------------------------
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #-------------------------
 # ghq
 #-------------------------
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
-
-#-------------------------
-# prezto
-#-------------------------
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-prompt pure
 
 #-------------------------
 # Integrate peco with history search
@@ -149,3 +149,4 @@ function peco-history-selection() {
 }
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
+
