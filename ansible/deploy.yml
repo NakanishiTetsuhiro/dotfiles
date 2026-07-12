@@ -15,12 +15,12 @@
           - zsh
           - tig
 
-      - name: Create tmux symlink
-        file:
-          src: ~/dotfiles/src/tmux/.tmux.conf
-          dest: ~/.tmux.conf
-          state: link
-          force: no
+      # - name: Create tmux symlink
+      #   file:
+      #     src: ~/dotfiles/src/tmux/.tmux.conf
+      #     dest: ~/.tmux.conf
+      #     state: link
+      #     force: no
 
       # - name: Create ctags symlink
       #   file:
@@ -29,9 +29,9 @@
       #     state: link
       #     force: no
 
-      - name: Create vimrc symlink
-        file:
-          src: ~/dotfiles/src/vim/.vimrc
-          dest: ~/.vimrc
-          state: link
-          force: yes
+      # - name: Create vimrc symlink
+      #   file:
+      #     src: ~/dotfiles/src/vim/.vimrc
+      #     dest: ~/.vimrc
+      #     state: link
+      #     force: yes
