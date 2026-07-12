@@ -31,6 +31,27 @@ ansible-playbook $HOME/dotfiles/ansible/deploy.yml -i $HOME/dotfiles/ansible/hos
 
 https://github.com/sorin-ionescu/prezto#manual
 
+```
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```
+
+3. Preztoの設定ファイルのシンボリックリンクを作成してください
+
+`.zshrc` はこのdotfilesのものを使用するため、**zshrc以外**をリンクします。
+（`~/.zpreztorc` が無いとPreztoのモジュールが読み込まれず、シェル起動時に `command not found: prompt` エラーが発生します）
+
+```
+ln -s ~/.zprezto/runcoms/zpreztorc ~/.zpreztorc
+ln -s ~/.zprezto/runcoms/zlogin    ~/.zlogin
+ln -s ~/.zprezto/runcoms/zlogout   ~/.zlogout
+ln -s ~/.zprezto/runcoms/zshenv    ~/.zshenv
+```
+
+- Prezto公式READMEに記載されているfor文でのリンク作成は使用しないでください
+  - `setopt EXTENDED_GLOB` が前提のコマンドですが、このdotfilesの `.zshrc` は `NO_EXTENDED_GLOB` を設定しているため失敗します
+  - また、`~/.zshrc` がPrezto付属のものに置き換わってしまう可能性があります
+- `~/.zprofile` は既存のファイル（Homebrewの設定など）がある場合はそのまま残してください
+
 ## Dependencies
 
 - https://github.com/peco/peco
